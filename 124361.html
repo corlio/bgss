@@ -24,7 +24,7 @@
     </ul>
     <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
       <!-- per-player tab to be cloned -->
-      <div class="tabs-panel" id="player_">
+      <div class="tabs-panel" id="_player_">
         <form>
           <div class="grid-container" id="container">
             <div class="grid-x grid-padding-x">&nbsp;</div>
@@ -45,7 +45,17 @@
                 <label lang="fr" for="jupiter" class="text-right middle">Nombre de cartes Jupiter</label>
               </div>
               <div class="small-3 cell">
-                <input type="number" id="jupiter" min="0" data-index="02">
+                <select id="jupiter" data-index="02">
+                  <option value="2" selected="selected">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
               </div>
             </div>
             <!-- number of houses -->
@@ -55,7 +65,7 @@
                 <label lang="fr" for="houses" class="text-right middle">Nombre de maisons (sauf Brique)</label>
               </div>
               <div class="small-3 cell">
-                <input type="number" id="houses" min="0" data-index="03">
+                <input type="number" id="houses" min="0" max="15" data-index="03">
               </div>
             </div>
             <!-- number of saturnus cards -->
@@ -65,7 +75,16 @@
                 <label lang="fr" for="saturnus" class="text-right middle">Nombre de cartes Saturnus</label>
               </div>
               <div class="small-3 cell">
-                <input type="number" id="saturnus" min="0" data-index="04">
+                <select id="saturnus" data-index="04">
+                  <option value="2" selected="selected">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                </select>
               </div>
             </div>
             <!-- number of provinces -->
@@ -75,7 +94,7 @@
                 <label lang="fr" for="provinces" class="text-right middle">Nombre de provinces</label>
               </div>
               <div class="small-3 cell">
-                <input type="number" id="provinces" min="0" data-index="05">
+                <input type="number" id="provinces" min="0" max="12" data-index="05">
               </div>
             </div>
             <!-- number of mercurius cards -->
@@ -85,7 +104,14 @@
                 <label lang="fr" for="mercurius" class="text-right middle">Nombre de cartes Mercurius</label>
               </div>
               <div class="small-3 cell">
-                <input type="number" id="mercurius" min="0" data-index="06">
+                <select id="mercurius" data-index="06">
+                  <option value="1" selected="selected">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
               </div>
             </div>
             <!-- number of types of goods -->
@@ -95,7 +121,14 @@
                 <label lang="fr" for="types" class="text-right middle">Nombre de types de marchandises</label>
               </div>
               <div class="small-3 cell">
-                <input type="number" id="types" min="0" data-index="07">
+                <select id="types" data-index="07">
+                  <option value="0" selected="selected">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
               </div>
             </div>
             <!-- number of mars cards -->
@@ -105,7 +138,14 @@
                 <label lang="fr" for="mars" class="text-right middle">Nombre de cartes Mars</label>
               </div>
               <div class="small-3 cell">
-                <input type="number" id="mars" min="0" data-index="08">
+                <select id="mars" data-index="08">
+                  <option value="1" selected="selected">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
               </div>
             </div>
             <!-- number of colonists -->
@@ -115,7 +155,13 @@
                 <label lang="fr" for="colonists" class="text-right middle">Nombre de colons</label>
               </div>
               <div class="small-3 cell">
-                <input type="number" id="colonists" min="0" data-index="09">
+                <select id="colonists" data-index="09">
+                  <option value="2" selected="selected">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
               </div>
             </div>
             <!-- only with the corresponding minerva card -->
@@ -130,7 +176,7 @@
                   <label lang="fr" for="brick" class="text-right middle">Nombre de maisons "brique"</label>
                 </div>
                 <div class="small-3 cell">
-                  <input type="number" id="brick" min="0" data-index="10">
+                  <input type="number" id="brick" min="0" max="15" data-index="10">
                 </div>
               </div>
               <!-- number of food houses -->
@@ -140,7 +186,7 @@
                   <label lang="fr" for="food" class="text-right middle">Nombre de maisons "bl&eacute;"</label>
                 </div>
                 <div class="small-3 cell">
-                  <input type="number" id="food" min="0" data-index="11">
+                  <input type="number" id="food" min="0" max="15" data-index="11">
                 </div>
               </div>
               <!-- number of tool houses -->
@@ -150,7 +196,7 @@
                   <label lang="fr" for="tool" class="text-right middle">Nombre de maisons "outil"</label>
                 </div>
                 <div class="small-3 cell">
-                  <input type="number" id="tool" min="0" data-index="12">
+                  <input type="number" id="tool" min="0" max="15" data-index="12">
                 </div>
               </div>
               <!-- number of wine houses -->
@@ -160,7 +206,7 @@
                   <label lang="fr" for="wine" class="text-right middle">Nombre de maisons "vin"</label>
                 </div>
                 <div class="small-3 cell">
-                  <input type="number" id="wine" min="0" data-index="13">
+                  <input type="number" id="wine" min="0" max="15" data-index="13">
                 </div>
               </div>
               <!-- number of cloth houses -->
@@ -170,7 +216,7 @@
                   <label lang="fr" for="cloth" class="text-right middle">Nombre de maisons "tissu"</label>
                 </div>
                 <div class="small-3 cell">
-                  <input type="number" id="cloth" min="0" data-index="14">
+                  <input type="number" id="cloth" min="0" max="15" data-index="14">
                 </div>
               </div>
             </div>
