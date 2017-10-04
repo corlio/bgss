@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="en" manifest="manifest.appcache">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BGSS</title>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left" id="title">BoardGame Score Sheet (BGSS)</div>
+    </div>
+    <form>
+      <div class="grid-container" id="container">
+        <div class="grid-x grid-padding-x">&nbsp;</div>
+        <!-- language -->
+        <div class="grid-x grid-padding-x">
+          <div class="small-3 cell">
+            <label lang="en" for="language" class="text-right middle">Language</label>
+            <label lang="fr" for="language" class="text-right middle">Langue</label>
+          </div>
+          <div class="small-9 cell">
+            <select id="language">
+              <option value="en">English</option>
+              <option value="fr">Fran&ccedil;ais</option>
+            </select>
+          </div>
+        </div>
+        <!-- game -->
+        <div class="grid-x grid-padding-x">
+          <div class="small-3 cell">
+            <label lang="en" for="game" class="text-right middle">Game</label>
+            <label lang="fr" for="game" class="text-right middle">Jeu</label>
+          </div>
+          <div class="small-9 cell">
+            <select class="langaware" id="game">
+              <!-- dynamic -->
+            </select>
+          </div>
+        </div>
+        <!-- players -->
+        <div class="grid-x grid-padding-x">
+          <div class="small-3 cell">
+            <label lang="en" for="players" class="text-right middle">Players</label>
+            <label lang="fr" for="players" class="text-right middle">Joueurs</label>
+          </div>
+          <div class="small-9 cell">
+            <select id="players">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </div>
+        </div>
+        <!-- player 1 name -->
+        <div class="grid-x grid-padding-x" id="player1" style="display: none">
+          <div class="small-3 cell">
+            <label lang="en" for="player1" class="text-right middle">Player 1</label>
+            <label lang="fr" for="player1" class="text-right middle">Joueur 1</label>
+          </div>
+          <div class="small-9 cell">
+            <input type="text" id="player1" data-index="1">
+          </div>
+        </div>
+        <!-- player 2 name -->
+        <div class="grid-x grid-padding-x" id="player2" style="display: none">
+          <div class="small-3 cell">
+            <label lang="en" for="player2" class="text-right middle">Player 2</label>
+            <label lang="fr" for="player2" class="text-right middle">Joueur 2</label>
+          </div>
+          <div class="small-9 cell">
+            <input type="text" id="player2" data-index="2">
+          </div>
+        </div>
+        <!-- player 3 name -->
+        <div class="grid-x grid-padding-x" id="player3" style="display: none">
+          <div class="small-3 cell">
+            <label lang="en" for="player3" class="text-right middle">Player 3</label>
+            <label lang="fr" for="player3" class="text-right middle">Joueur 3</label>
+          </div>
+          <div class="small-9 cell">
+            <input type="text" id="player3" data-index="3">
+          </div>
+        </div>
+        <!-- player 4 name -->
+        <div class="grid-x grid-padding-x" id="player4" style="display: none">
+          <div class="small-3 cell">
+            <label lang="en" for="player4" class="text-right middle">Player 4</label>
+            <label lang="fr" for="player4" class="text-right middle">Joueur 4</label>
+          </div>
+          <div class="small-9 cell">
+            <input type="text" id="player4" data-index="4">
+          </div>
+        </div>
+        <!-- player 5 name -->
+        <div class="grid-x grid-padding-x" id="player5" style="display: none">
+          <div class="small-3 cell">
+            <label lang="en" for="player5" class="text-right middle">Player 5</label>
+            <label lang="fr" for="player5" class="text-right middle">Joueur 5</label>
+          </div>
+          <div class="small-9 cell">
+            <input type="text" id="player5" data-index="5">
+          </div>
+        </div>
+        <!-- player 6 name -->
+        <div class="grid-x grid-padding-x" id="player6" style="display: none">
+          <div class="small-3 cell">
+            <label lang="en" for="player6" class="text-right middle">Player 6</label>
+            <label lang="fr" for="player6" class="text-right middle">Joueur 6</label>
+          </div>
+          <div class="small-9 cell">
+            <input type="text" id="player6" data-index="6">
+          </div>
+        </div>
+        <!-- player 7 name -->
+        <div class="grid-x grid-padding-x" id="player7" style="display: none">
+          <div class="small-3 cell">
+            <label lang="en" for="player7" class="text-right middle">Player 7</label>
+            <label lang="fr" for="player7" class="text-right middle">Joueur 7</label>
+          </div>
+          <div class="small-9 cell">
+            <input type="text" id="player7" data-index="7">
+          </div>
+        </div>
+        <!-- buttons -->
+        <div class="grid-x grid-padding-x">
+          <div class="small-3 small-centered text-center column">&nbsp;</div>
+          <div class="small-3 small-centered text-center column">
+            <button type="button" class="button" id="clear">
+              <span lang="en">Clear</span>
+              <span lang="fr">Effacer</span>
+            </button>
+          </div>
+          <div class="small-3 small-centered text-center column">
+            <button type="button" class="button" id="next">
+              <span lang="en">Next</span>
+              <span lang="fr">Suivant</span>
+            </button>
+          </div>
+          <div class="small-3 small-centered text-center column">&nbsp;</div>
+        </div>
+      </div>
+    </form>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_main);
+    </script>
+  </body>
+</html>

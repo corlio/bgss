@@ -1,0 +1,206 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <a class="menu-icon" href="."></a>
+        &nbsp;
+        <span id="title"><!-- dynamic --></span>
+      </div>
+    </div>
+    <ul class="tabs" data-tabs id="tabs">
+      <!-- dynamic -->
+      <li class="tabs-title"><a href="#results">
+          <span lang="en">Results</span>
+          <span lang="fr">R&eacute;sultats</span>
+      </a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
+      <!-- per-player tab to be cloned -->
+      <div class="tabs-panel" id="_player_">
+        <form>
+          <div class="grid-container" id="container">
+            <div class="grid-x grid-padding-x">&nbsp;</div>
+            <!-- amount of money -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="money" class="text-right middle">Money (&dollar;)</label>
+                <label lang="fr" for="money" class="text-right middle">Argent (&dollar;)</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="money" min="0" data-index="01">
+              </div>
+            </div>
+            <!-- VPs from buildings -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="buildings" class="text-right middle">Buildings VPs</label>
+                <label lang="fr" for="buildings" class="text-right middle">PV des b&acirc;timents</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="buildings" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- VPs from cities -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="cities" class="text-right middle">Cities VPs</label>
+                <label lang="fr" for="cities" class="text-right middle">PV des villes</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="cities" data-index="03">
+              </div>
+            </div>
+            <!-- VPs from train stations -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="stations" class="text-right middle">Stations VPs</label>
+                <label lang="fr" for="stations" class="text-right middle">PV des gares</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="stations" min="0" data-index="04">
+              </div>
+            </div>
+            <!-- VPs from hazard tiles -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="hazard" class="text-right middle">Hazard Tiles VPs</label>
+                <label lang="fr" for="hazard" class="text-right middle">PV des tuiles danger</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="hazard" min="0" data-index="05">
+              </div>
+            </div>
+            <!-- VPs from cattle cards -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="cattle" class="text-right middle">Cattle Cards VPs</label>
+                <label lang="fr" for="cattle" class="text-right middle">PV des cartes b&eacute;tail</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="cattle" min="0" data-index="06">
+              </div>
+            </div>
+            <!-- VPs from objective cards -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="objective" class="text-right middle">Objective Cards VPs</label>
+                <label lang="fr" for="objective" class="text-right middle">PV des cartes objectif</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="objective" data-index="07">
+              </div>
+            </div>
+            <!-- VPs from station master tiles -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="master" class="text-right middle">Station Master Tiles VPs</label>
+                <label lang="fr" for="master" class="text-right middle">PV des tuiles chef de gare</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="master" min="0" data-index="08">
+              </div>
+            </div>
+            <!-- number of workers in last 2 columns -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="workers" class="text-right middle">
+                  Number of Workers in the Last 2 Columns
+                </label>
+                <label lang="fr" for="workers" class="text-right middle">
+                  Nombre de travailleurs dans les 2 derni&egrave;res colonnes
+                </label>
+              </div>
+              <div class="small-3 cell">
+                <select id="workers">
+                  <option value="0" selected="selected">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </div>
+            </div>
+            <!-- player board bonus disc -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="disc" class="text-right middle">Player Board 3 VPs Disc</label>
+                <label lang="fr" for="disc" class="text-right middle">Disque 3 PV du plateau du joueur</label>
+              </div>
+              <div class="small-3 cell switch">
+                <input type="checkbox" id="disc" class="switch-input">
+                <label class="switch-paddle" for="disc"></label>
+              </div>
+            </div>
+            <!-- job market token -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="job" class="text-right middle">Job Market Token</label>
+                <label lang="fr" for="job" class="text-right middle">Jeton march&eacute; de l'emploi</label>
+              </div>
+              <div class="small-3 cell switch">
+                <input type="checkbox" id="job" class="switch-input">
+                <label class="switch-paddle" for="job"></label>
+              </div>
+            </div>
+            <!-- score -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" class="text-right middle">Victory Points</label>
+                <label lang="fr" class="text-right middle">Points de victoire</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="score" value="0" readonly>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- tab for results -->
+      <div class="tabs-panel" id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+              </th>
+              <th>
+                <span lang="en">Victory Points</span>
+                <span lang="fr">Points de victoire</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dynamic -->
+          </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p lang="en"><i>Tie breaker</i>:
+          none...
+        <p>
+        <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+          aucun...
+        <p>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_193738);
+    </script>
+  </body>
+</html>

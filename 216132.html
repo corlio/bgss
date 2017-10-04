@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <a class="menu-icon" href="."></a>
+        &nbsp;
+        <span id="title"><!-- dynamic --></span>
+      </div>
+    </div>
+    <ul class="tabs" data-tabs id="tabs">
+      <!-- dynamic -->
+      <li class="tabs-title"><a href="#results">
+          <span lang="en">Results</span>
+          <span lang="fr">R&eacute;sultats</span>
+      </a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
+      <!-- per-player tab to be cloned -->
+      <div class="tabs-panel" id="_player_">
+        <form>
+          <div class="grid-container" id="container">
+            <div class="grid-x grid-padding-x">&nbsp;</div>
+            <!-- glory track -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="glory" class="text-right middle">Glory Track</label>
+                <label lang="fr" for="glory" class="text-right middle">FIXME</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="glory" min="0" data-index="01">
+              </div>
+            </div>
+            <!-- number of basic goods -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="basic" class="text-right middle">Number of Basic Goods</label>
+                <label lang="fr" for="basic" class="text-right middle">Nombre de FIXME</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="basic" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- number of processed goods -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="processed" class="text-right middle">Number of Processed Goods</label>
+                <label lang="fr" for="processed" class="text-right middle">Nombre de FIXME</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="processed" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- amount of money -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="money" class="text-right middle">Money (&pound;)</label>
+                <label lang="fr" for="money" class="text-right middle">Argent (&pound;)</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="money" data-index="03">
+              </div>
+            </div>
+            <!-- number of hops -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="hops" class="text-right middle">Number of Hops</label>
+                <label lang="fr" for="hops" class="text-right middle">Nombre de houblon</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="hops" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- number of cotton -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="cotton" class="text-right middle">Number of Cotton</label>
+                <label lang="fr" for="cotton" class="text-right middle">Nombre de coton</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="cotton" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- number of tobacco -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="tobacco" class="text-right middle">Number of Tobacco</label>
+                <label lang="fr" for="tobacco" class="text-right middle">Nombre de tabac</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="tobacco" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- number of sugar cane -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="sugar" class="text-right middle">Number of Sugar Cane</label>
+                <label lang="fr" for="sugar" class="text-right middle">Nombre de canne &agrave; sucre</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="sugar" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- number of export contracts -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="contracts" class="text-right middle">Number of Export Contracts</label>
+                <label lang="fr" for="contracts" class="text-right middle">Nombre de contrats d'export</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="contracts" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- number of settlements -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="settlements" class="text-right middle">Number of Settlements</label>
+                <label lang="fr" for="settlements" class="text-right middle">Nombre de FIXME</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="settlements" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- score -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" class="text-right middle">Victory Points</label>
+                <label lang="fr" class="text-right middle">Points de victoire</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="score" value="0" readonly>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- tab for results -->
+      <div class="tabs-panel" id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+              </th>
+              <th>
+                <span lang="en">Victory Points</span>
+                <span lang="fr">Points de victoire</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dynamic -->
+          </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p lang="en"><i>Tie breaker</i>:
+          leftover money (included here as decimal part).
+        <p>
+        <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+          argent restant (inclus ici comme partie d&eacute;cimale).
+        <p>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_216132);
+    </script>
+  </body>
+</html>
