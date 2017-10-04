@@ -1,0 +1,243 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <a class="menu-icon" href="."></a>
+        &nbsp;
+        <span id="title"><!-- dynamic --></span>
+      </div>
+    </div>
+    <ul class="tabs" data-tabs id="tabs">
+      <!-- dynamic -->
+      <li class="tabs-title"><a href="#results">
+          <span lang="en">Results</span>
+          <span lang="fr">R&eacute;sultats</span>
+      </a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
+      <!-- per-player tab to be cloned -->
+      <div class="tabs-panel" id="_player_">
+        <form>
+          <div class="grid-container" id="container">
+            <div class="grid-x grid-padding-x">&nbsp;</div>
+            <!-- number of plowed fields -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="plowed" class="text-right middle">Number of Plowed Fields</label>
+                <label lang="fr" for="plowed" class="text-right middle">Nombre de champs labour&eacute;s</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="plowed" min="0" data-index="01">
+              </div>
+            </div>
+            <!-- number of fenced pastures -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="pastures" class="text-right middle">Number of Fenced Pastures</label>
+                <label lang="fr" for="pastures" class="text-right middle">Nombre de p&acirc;turages clos</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="pastures" min="0" data-index="02">
+              </div>
+            </div>
+            <!-- number of grain -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="grain" class="text-right middle">Number of Grain</label>
+                <label lang="fr" for="grain" class="text-right middle">Nombre de c&eacute;r&eacute;ales</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="grain" min="0" data-index="03">
+              </div>
+            </div>
+            <!-- number of vegetables -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="vegetables" class="text-right middle">Number of Vegetables</label>
+                <label lang="fr" for="vegetables" class="text-right middle">Nombre de l&eacute;gumes</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="vegetables" min="0" data-index="04">
+              </div>
+            </div>
+            <!-- number of sheep -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="sheep" class="text-right middle">Number of Sheep</label>
+                <label lang="fr" for="sheep" class="text-right middle">Nombre de moutons</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="sheep" min="0" data-index="05">
+              </div>
+            </div>
+            <!-- number of wild boar -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="boar" class="text-right middle">Number of Wild Boar</label>
+                <label lang="fr" for="boar" class="text-right middle">Nombre de sangliers</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="boar" min="0" data-index="06">
+              </div>
+            </div>
+            <!-- number of cattle -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="cattle" class="text-right middle">Number of Cattle</label>
+                <label lang="fr" for="cattle" class="text-right middle">Nombre de b&oelig;ufs</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="cattle" min="0" data-index="07">
+              </div>
+            </div>
+            <!-- number of unused spaces -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="unused" class="text-right middle">Number of Unused Spaces</label>
+                <label lang="fr" for="unused" class="text-right middle">Nombre de cases inutilis&eacute;s</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="unused" min="0" data-index="08">
+              </div>
+            </div>
+            <!-- number of fenced stables -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="stables" class="text-right middle">Number of Fenced Stables</label>
+                <label lang="fr" for="stables" class="text-right middle">Nombre d'&eacute;tables cl&ocirc;tur&eacute;es</label>
+              </div>
+              <div class="small-3 cell">
+                <select id="stables" data-index="09">
+                  <option value="0" selected="selected">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+            <!-- number of clay rooms -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="clay" class="text-right middle">Number of Clay Rooms</label>
+                <label lang="fr" for="clay" class="text-right middle">Nombre de pi&egrave;ces en argile</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="clay" min="0" data-index="10">
+              </div>
+            </div>
+            <!-- number of stone rooms -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="stone" class="text-right middle">Number of Stone Rooms</label>
+                <label lang="fr" for="stone" class="text-right middle">Nombre de pi&egrave;ces en pierre</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="stone" min="0" data-index="11">
+              </div>
+            </div>
+            <!-- number of family members -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="family" class="text-right middle">Number of Family Members</label>
+                <label lang="fr" for="family" class="text-right middle">Nombre de membres de la famille</label>
+              </div>
+              <div class="small-3 cell">
+                <select id="family" data-index="12">
+                  <option value="2" selected="selected">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <!-- card points -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="card" class="text-right middle">Card VPs</label>
+                <label lang="fr" for="card" class="text-right middle">PV des cartes </label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="card" min="0" data-index="13">
+              </div>
+            </div>
+            <!-- bonus points -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="bonus" class="text-right middle">Bonus VPs</label>
+                <label lang="fr" for="bonus" class="text-right middle">PV bonus</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="bonus" min="0" data-index="14">
+              </div>
+            </div>
+            <!-- number of begging cards -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="begging" class="text-right middle">Number of Begging Cards</label>
+                <label lang="fr" for="begging" class="text-right middle">Nombre de cartes de mendicit&eacute;</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="begging" min="0" data-index="15">
+              </div>
+            </div>
+            <!-- score -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" class="text-right middle">Victory Points</label>
+                <label lang="fr" class="text-right middle">Points de victoire</label>
+              </div>
+              <div class="small-3 cell">
+                <input type="number" id="score" value="0" readonly>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- tab for results -->
+      <div class="tabs-panel" id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+              </th>
+              <th>
+                <span lang="en">Victory Points</span>
+                <span lang="fr">Points de victoire</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dynamic -->
+          </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p lang="en"><i>Tie breaker</i>:
+          building resources left.
+        <p>
+        <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+          ressources de construction restantes.
+        <p>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.min.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_31260);
+    </script>
+  </body>
+</html>
