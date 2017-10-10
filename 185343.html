@@ -20,166 +20,164 @@
     <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
       <!-- per-player tab to be cloned -->
       <div class="tabs-panel" id="_player_">
-        <form>
-          <div class="grid-container" id="container">
-            <div class="grid-x grid-padding-x">&nbsp;</div>
-            <!-- VPs from buildings -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="buildings" class="text-right middle">Buildings VPs</label>
-                <label lang="fr" for="buildings" class="text-right middle">PV des b&acirc;timents</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="buildings" min="0" data-index="01">
-              </div>
+        <div class="grid-container" id="container">
+          <div class="grid-x grid-padding-x">&nbsp;</div>
+          <!-- VPs from buildings -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="buildings" class="text-right middle">Buildings VPs</label>
+              <label lang="fr" for="buildings" class="text-right middle">PV des b&acirc;timents</label>
             </div>
-            <!-- VPs from superprojects -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="projects" class="text-right middle">Superprojects VPs</label>
-                <label lang="fr" for="projects" class="text-right middle">PV des superprojets</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="projects" min="0" data-index="02">
-              </div>
-            </div>
-            <!-- number of anomalies -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="anomalies" class="text-right middle">Number of Anomalies</label>
-                <label lang="fr" for="anomalies" class="text-right middle">Nombre d'anomalies</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="anomalies" min="0" data-index="03">
-              </div>
-            </div>
-            <!-- VPs from time travel track -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="travel" class="text-right middle">Time Travel Track VPs</label>
-                <label lang="fr" for="travel" class="text-right middle">PV de la piste de voyage temporel</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="travel" data-index="04">
-              </div>
-            </div>
-            <!-- VPs from morale track -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="morale" class="text-right middle">Morale Track VPs</label>
-                <label lang="fr" for="morale" class="text-right middle">PV de la piste de moral</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="morale" data-index="05">
-              </div>
-            </div>
-            <!-- number of round breakthroughs -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="breakthroughs1" class="text-right middle">Number of Round Breakthroughs</label>
-                <label lang="fr" for="breakthroughs1" class="text-right middle">Nombre de d&eacute;couvertes rondes</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="breakthroughs1" min="0" data-index="06">
-              </div>
-            </div>
-            <!-- number of triangle breakthroughs -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="breakthroughs2" class="text-right middle">Number of Triangle Breakthroughs</label>
-                <label lang="fr" for="breakthroughs2" class="text-right middle">Nombre de d&eacute;couvertes triangulaires</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="breakthroughs2" min="0" data-index="07">
-              </div>
-            </div>
-            <!-- number of square breakthroughs -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="breakthroughs3" class="text-right middle">Number of Square Breakthroughs</label>
-                <label lang="fr" for="breakthroughs3" class="text-right middle">Nombre de d&eacute;couvertes carr&eacute;es</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="breakthroughs3" min="0" data-index="08">
-              </div>
-            </div>
-            <!-- VPs tokens -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="tokens" class="text-right middle">Token VPs</label>
-                <label lang="fr" for="tokens" class="text-right middle">PV des jetons</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="tokens" min="-3" data-index="09">
-              </div>
-            </div>
-            <!-- number of unfulfilled warp tiles -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="warps" class="text-right middle">Number of Warp Tiles</label>
-                <label lang="fr" for="warps" class="text-right middle">Nombre de tuiles vortex</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="warps" min="0" data-index="10">
-              </div>
-            </div>
-            <!-- endgame condition 1 -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="endgame1" class="text-right middle">Endgame Condition 1</label>
-                <label lang="fr" for="endgame1" class="text-right middle">Condition de fin de partie 1</label>
-              </div>
-              <div class="small-3 cell switch">
-                <input type="checkbox" id="endgame1" class="switch-input">
-                <label class="switch-paddle" for="endgame1"></label>
-              </div>
-            </div>
-            <!-- endgame condition 2 -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="endgame2" class="text-right middle">Endgame Condition 2</label>
-                <label lang="fr" for="endgame2" class="text-right middle">Condition de fin de partie 2</label>
-              </div>
-              <div class="small-3 cell switch">
-                <input type="checkbox" id="endgame2" class="switch-input">
-                <label class="switch-paddle" for="endgame2"></label>
-              </div>
-            </div>
-            <!-- endgame condition 3 -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="endgame3" class="text-right middle">Endgame Condition 3</label>
-                <label lang="fr" for="endgame3" class="text-right middle">Condition de fin de partie 3</label>
-              </div>
-              <div class="small-3 cell switch">
-                <input type="checkbox" id="endgame3" class="switch-input">
-                <label class="switch-paddle" for="endgame3"></label>
-              </div>
-            </div>
-            <!-- endgame condition 4 -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="endgame4" class="text-right middle">Endgame Condition 4</label>
-                <label lang="fr" for="endgame4" class="text-right middle">Condition de fin de partie 4</label>
-              </div>
-              <div class="small-3 cell switch">
-                <input type="checkbox" id="endgame4" class="switch-input">
-                <label class="switch-paddle" for="endgame4"></label>
-              </div>
-            </div>
-            <!-- endgame condition 5 -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="endgame5" class="text-right middle">Endgame Condition 5</label>
-                <label lang="fr" for="endgame5" class="text-right middle">Condition de fin de partie 5</label>
-              </div>
-              <div class="small-3 cell switch">
-                <input type="checkbox" id="endgame5" class="switch-input">
-                <label class="switch-paddle" for="endgame5"></label>
-              </div>
+            <div class="small-3 cell">
+              <input type="number" id="buildings" min="0" data-index="01">
             </div>
           </div>
-        </form>
+          <!-- VPs from superprojects -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="projects" class="text-right middle">Superprojects VPs</label>
+              <label lang="fr" for="projects" class="text-right middle">PV des superprojets</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="projects" min="0" data-index="02">
+            </div>
+          </div>
+          <!-- number of anomalies -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="anomalies" class="text-right middle">Number of Anomalies</label>
+              <label lang="fr" for="anomalies" class="text-right middle">Nombre d'anomalies</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="anomalies" min="0" data-index="03">
+            </div>
+          </div>
+          <!-- VPs from time travel track -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="travel" class="text-right middle">Time Travel Track VPs</label>
+              <label lang="fr" for="travel" class="text-right middle">PV de la piste de voyage temporel</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="travel" data-index="04">
+            </div>
+          </div>
+          <!-- VPs from morale track -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="morale" class="text-right middle">Morale Track VPs</label>
+              <label lang="fr" for="morale" class="text-right middle">PV de la piste de moral</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="morale" data-index="05">
+            </div>
+          </div>
+          <!-- number of round breakthroughs -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="breakthroughs1" class="text-right middle">Number of Round Breakthroughs</label>
+              <label lang="fr" for="breakthroughs1" class="text-right middle">Nombre de d&eacute;couvertes rondes</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="breakthroughs1" min="0" data-index="06">
+            </div>
+          </div>
+          <!-- number of triangle breakthroughs -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="breakthroughs2" class="text-right middle">Number of Triangle Breakthroughs</label>
+              <label lang="fr" for="breakthroughs2" class="text-right middle">Nombre de d&eacute;couvertes triangulaires</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="breakthroughs2" min="0" data-index="07">
+            </div>
+          </div>
+          <!-- number of square breakthroughs -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="breakthroughs3" class="text-right middle">Number of Square Breakthroughs</label>
+              <label lang="fr" for="breakthroughs3" class="text-right middle">Nombre de d&eacute;couvertes carr&eacute;es</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="breakthroughs3" min="0" data-index="08">
+            </div>
+          </div>
+          <!-- VPs tokens -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="tokens" class="text-right middle">Token VPs</label>
+              <label lang="fr" for="tokens" class="text-right middle">PV des jetons</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="tokens" min="-3" data-index="09">
+            </div>
+          </div>
+          <!-- number of unfulfilled warp tiles -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="warps" class="text-right middle">Number of Warp Tiles</label>
+              <label lang="fr" for="warps" class="text-right middle">Nombre de tuiles vortex</label>
+            </div>
+            <div class="small-3 cell">
+              <select id="warps" data-init="0/0/9" data-index="10"><!-- dynamic --></select>
+            </div>
+          </div>
+          <!-- endgame condition 1 -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="endgame1" class="text-right middle">Endgame Condition 1</label>
+              <label lang="fr" for="endgame1" class="text-right middle">Condition de fin de partie 1</label>
+            </div>
+            <div class="small-3 cell switch">
+              <input type="checkbox" id="endgame1" class="switch-input">
+              <label class="switch-paddle" for="endgame1"></label>
+            </div>
+          </div>
+          <!-- endgame condition 2 -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="endgame2" class="text-right middle">Endgame Condition 2</label>
+              <label lang="fr" for="endgame2" class="text-right middle">Condition de fin de partie 2</label>
+            </div>
+            <div class="small-3 cell switch">
+              <input type="checkbox" id="endgame2" class="switch-input">
+              <label class="switch-paddle" for="endgame2"></label>
+            </div>
+          </div>
+          <!-- endgame condition 3 -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="endgame3" class="text-right middle">Endgame Condition 3</label>
+              <label lang="fr" for="endgame3" class="text-right middle">Condition de fin de partie 3</label>
+            </div>
+            <div class="small-3 cell switch">
+              <input type="checkbox" id="endgame3" class="switch-input">
+              <label class="switch-paddle" for="endgame3"></label>
+            </div>
+          </div>
+          <!-- endgame condition 4 -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="endgame4" class="text-right middle">Endgame Condition 4</label>
+              <label lang="fr" for="endgame4" class="text-right middle">Condition de fin de partie 4</label>
+            </div>
+            <div class="small-3 cell switch">
+              <input type="checkbox" id="endgame4" class="switch-input">
+              <label class="switch-paddle" for="endgame4"></label>
+            </div>
+          </div>
+          <!-- endgame condition 5 -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="endgame5" class="text-right middle">Endgame Condition 5</label>
+              <label lang="fr" for="endgame5" class="text-right middle">Condition de fin de partie 5</label>
+            </div>
+            <div class="small-3 cell switch">
+              <input type="checkbox" id="endgame5" class="switch-input">
+              <label class="switch-paddle" for="endgame5"></label>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- tab for results -->
       <div class="tabs-panel" id="results">

@@ -1,0 +1,128 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <a class="menu-icon" style="margin-right: 1em" href="."></a><span id="title"><!-- dynamic --></span>
+      </div>
+    </div>
+    <ul class="tabs" data-tabs id="tabs">
+      <!-- dynamic -->
+      <li class="tabs-title"><a href="#results">=</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
+      <!-- per-player tab to be cloned -->
+      <div class="tabs-panel" id="_player_">
+        <div class="grid-container" id="container">
+          <div class="grid-x grid-padding-x">&nbsp;</div>
+          <!-- number of coins -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="coins" class="text-right middle">Number of Coins</label>
+              <label lang="fr" for="coins" class="text-right middle">Nombre de pi&egrave;ces</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="coins" min="0" data-index="01">
+            </div>
+          </div>
+          <!-- popularity -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="popularity" class="text-right middle">Popularity Level</label>
+              <label lang="fr" for="popularity" class="text-right middle">Niveau de popularit&eacute;</label>
+            </div>
+            <div class="small-3 cell">
+              <select id="popularity" data-init="0/0/18" data-index="02"><!-- dynamic --></select>
+            </div>
+          </div>
+          <!-- number of stars -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="stars" class="text-right middle">Number of Stars</label>
+              <label lang="fr" for="stars" class="text-right middle">Nombre d'&eacute;toiles</label>
+            </div>
+            <div class="small-3 cell">
+              <select id="stars" data-init="0/0/6" data-index="03"><!-- dynamic --></select>
+            </div>
+          </div>
+          <!-- number of controlled territories -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="territories" class="text-right middle">Number of Territories</label>
+              <label lang="fr" for="territories" class="text-right middle">Nombre de territoires</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="territories" min="0" data-index="04">
+            </div>
+          </div>
+          <!-- number of resources -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="resources" class="text-right middle">Number of Resources</label>
+              <label lang="fr" for="resources" class="text-right middle">Nombre de ressources</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="resources" min="0" data-index="05">
+            </div>
+          </div>
+          <!-- structure bonus tile -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="bonus" class="text-right middle">Structure Bonus VPs</label>
+              <label lang="fr" for="bonus" class="text-right middle">PV du bonus b&acirc;timent</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="bonus" min="0" data-index="06">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tab for results -->
+      <div class="tabs-panel" id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+              </th>
+              <th>
+                <span lang="en">Victory Points</span>
+                <span lang="fr">Points de victoire</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dynamic -->
+          </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p lang="en"><i>Tie breaker</i>:
+          number of workers, mechs and structures then power then popularity then
+          number of resources then number of territories then number of stars.
+        </p>
+        <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+          nombre d'ouvriers, mechs et b&acirc;timents puis puissance puis
+          popularit&eacute; puis nombre de ressources puis nombre de
+          territoires puis nombre d'&eacute;toiles.
+        </p>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.min.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_game);
+    </script>
+  </body>
+</html>
