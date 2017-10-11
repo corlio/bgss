@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <title>BGSS</title>
     <link rel="stylesheet" href="css/foundation.min.css"/>
   </head>
@@ -11,7 +12,7 @@
     <div class="top-bar">
       <div class="top-bar-left" id="title">BoardGame Score Sheet (BGSS)</div>
     </div>
-    <div class="grid-container" id="container">
+    <div class="grid-container">
       <div class="grid-x grid-padding-x">&nbsp;</div>
       <!-- language -->
       <div class="grid-x grid-padding-x">
@@ -126,24 +127,24 @@
           <input type="text" id="player7" list="names" data-index="7">
         </div>
       </div>
-      <!-- player names -->
+      <!-- known player names -->
       <datalist id="names"><!-- dynamic --></datalist>
       <!-- buttons -->
       <div class="grid-x grid-padding-x">
-        <div class="small-3 small-centered text-center column">&nbsp;</div>
-        <div class="small-3 small-centered text-center column">
+        <div class="small-3 cell">&nbsp;</div>
+        <div class="small-3 small-centered text-center cell">
           <button type="button" class="button" id="clear">
             <span lang="en">Clear</span>
             <span lang="fr">Effacer</span>
           </button>
         </div>
-        <div class="small-3 small-centered text-center column">
+        <div class="small-3 small-centered text-center cell">
           <button type="button" class="button" id="next">
             <span lang="en">Next</span>
             <span lang="fr">Suivant</span>
           </button>
         </div>
-        <div class="small-3 small-centered text-center column">&nbsp;</div>
+        <div class="small-3 cell">&nbsp;</div>
       </div>
     </div>
     <!-- JavaScript -->

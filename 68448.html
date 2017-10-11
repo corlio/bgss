@@ -1,0 +1,183 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <a class="menu-icon" style="margin-right: 1em" href="."></a><span id="title"><!-- dynamic --></span>
+      </div>
+    </div>
+    <ul class="tabs" data-tabs id="tabs">
+      <!-- dynamic -->
+      <li class="tabs-title"><a href="#results">=</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
+      <!-- per-player tab to be cloned -->
+      <div class="tabs-panel" id="_player_">
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">&nbsp;</div>
+          <!-- number of coins -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="coins" class="text-right middle">Number of Coins</label>
+              <label lang="fr" for="coins" class="text-right middle">Nombre de pi&egrave;ces</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="coins" min="0" data-index="01">
+            </div>
+          </div>
+          <!-- military -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="military" class="text-right middle">Military VPs</label>
+              <label lang="fr" for="military" class="text-right middle">PV militaires</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="military" data-index="02">
+            </div>
+          </div>
+          <!-- wonder -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="wonder" class="text-right middle">Wonder VPs</label>
+              <label lang="fr" for="wonder" class="text-right middle">PV de la merveille</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="wonder" min="0" data-index="03">
+            </div>
+          </div>
+          <!-- civilian -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="civilian" class="text-right middle">Civilian VPs</label>
+              <label lang="fr" for="civilian" class="text-right middle">PV civils</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="civilian" min="0" data-index="04">
+            </div>
+          </div>
+          <!-- commercial -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="commercial" class="text-right middle">Commercial VPs</label>
+              <label lang="fr" for="commercial" class="text-right middle">PV commerciaux</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="commercial" min="0" data-index="05">
+            </div>
+          </div>
+          <!-- guild -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="guild" class="text-right middle">Guild VPs</label>
+              <label lang="fr" for="guild" class="text-right middle">PV des guildes</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="guild" min="0" data-index="06">
+            </div>
+          </div>
+          <!-- scientific -->
+          <div class="small secondary callout text-center">
+            <span lang="en">Scientific VPs</span>
+            <span lang="fr">PV scientifiques</span>
+            &nbsp;=&nbsp;
+            <span id="scientific"></span>
+            <p>&nbsp;</p>
+            <!-- scientific (tablets) -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="tablets" class="text-right middle">Number of Tablets</label>
+                <label lang="fr" for="tablets" class="text-right middle">Nombre de tablettes</label>
+              </div>
+              <div class="small-3 cell">
+                <select id="tablets" data-init="0/0/4" data-index="07"><!-- dynamic --></select>
+              </div>
+            </div>
+            <!-- scientific (compasses) -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="compasses" class="text-right middle">Number of Compasses</label>
+                <label lang="fr" for="compasses" class="text-right middle">Nombre de compas</label>
+              </div>
+              <div class="small-3 cell">
+                <select id="compasses" data-init="0/0/4" data-index="08"><!-- dynamic --></select>
+              </div>
+            </div>
+            <!-- scientific (gears) -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="gears" class="text-right middle">Number of Gears</label>
+                <label lang="fr" for="gears" class="text-right middle">Nombre d'engrenages</label>
+              </div>
+              <div class="small-3 cell">
+                <select id="gears" data-init="0/0/4" data-index="09"><!-- dynamic --></select>
+              </div>
+            </div>
+            <!-- scientific (wild) -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-9 cell">
+                <label lang="en" for="wild" class="text-right middle">Number of Wild</label>
+                <label lang="fr" for="wild" class="text-right middle">Nombre de jokers</label>
+              </div>
+              <div class="small-3 cell">
+                <select id="wild" data-init="0/0/2" data-index="10"><!-- dynamic --></select>
+              </div>
+            </div>
+          </div>
+          <!-- extra VPs (extensions) -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="extra" class="text-right middle">Extra VPs</label>
+              <label lang="fr" for="extra" class="text-right middle">PV suppl&eacute;mentaires</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="extra" data-index="11">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tab for results -->
+      <div class="tabs-panel" id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+              </th>
+              <th>
+                <span lang="en">Victory Points</span>
+                <span lang="fr">Points de victoire</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dynamic -->
+          </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p lang="en"><i>Tie breaker</i>:
+          number of coins.
+        </p>
+        <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+          nombre de pi&egrave;ces.
+        </p>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.min.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_game);
+    </script>
+  </body>
+</html>
