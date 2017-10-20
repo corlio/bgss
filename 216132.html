@@ -4,8 +4,8 @@
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
     <link rel="stylesheet" href="css/foundation.min.css"/>
+    <title>BGSS</title>
   </head>
   <body>
     <div class="top-bar">
@@ -124,22 +124,8 @@
           </div>
         </div>
       </div>
-      <!-- tab for results -->
+      <!-- tab for the results -->
       <div class="tabs-panel" id="results">
-        <p>
-          <span lang="en">Victory Points per imported goods: </span>
-          <span lang="fr">Points de victoire par marchandise import&eacute;e : </span>
-          <span lang="en">Cotton</span>
-          <span lang="fr">coton</span>
-          = <span id="vp_cotton"></span>,
-          <span lang="en">Tobacco</span>
-          <span lang="fr">tabac</span>
-          = <span id="vp_tobacco"></span>,
-          <span lang="en">Sugar Cane</span>
-          <span lang="fr">canne &agrave; sucre</span>
-          = <span id="vp_sugar"></span>.
-        </p>
-        <p>&nbsp;</p>
         <table>
           <thead>
             <tr>
@@ -157,13 +143,33 @@
             <!-- dynamic -->
           </tbody>
         </table>
-        <p>&nbsp;</p>
-        <p lang="en"><i>Tie breaker</i>:
-          leftover money (included here as decimal part).
+        <!-- tie breaker information -->
+        <div id="tie">
+          <p lang="en"><i>Tie breaker</i>:
+            leftover money (included here as decimal part).
+          </p>
+          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+            argent restant (inclus ici comme partie d&eacute;cimale).
+          </p>
+        </div>
+        <!-- imported goods information -->
+        <p>
+          <i>
+            <span lang="en">VPs per imported goods</span>
+            <span lang="fr">PV par marchandise import&eacute;e</span>
+          </i>:
+          <span lang="en">Cotton</span>
+          <span lang="fr">coton</span>
+          = <span id="vp_cotton"></span>,
+          <span lang="en">Tobacco</span>
+          <span lang="fr">tabac</span>
+          = <span id="vp_tobacco"></span>,
+          <span lang="en">Sugar Cane</span>
+          <span lang="fr">canne &agrave; sucre</span>
+          = <span id="vp_sugar"></span>.
         </p>
-        <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
-          argent restant (inclus ici comme partie d&eacute;cimale).
-        </p>
+        <!-- date information -->
+        <i><div class="text-center" id="date"></div></i>
       </div>
     </div>
     <!-- JavaScript -->

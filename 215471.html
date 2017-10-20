@@ -4,9 +4,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
     <link rel="stylesheet" href="css/foundation.min.css"/>
     <link rel="stylesheet" href="css/bgss.min.css"/>
+    <title>BGSS</title>
   </head>
   <body>
     <div class="top-bar">
@@ -246,7 +246,7 @@
           </div>
         </div>
       </div>
-      <!-- tab for results -->
+      <!-- tab for the results -->
       <div class="tabs-panel" id="results">
         <table>
           <thead>
@@ -265,13 +265,17 @@
             <!-- dynamic -->
           </tbody>
         </table>
-        <p>&nbsp;</p>
-        <p lang="en"><i>Tie breaker</i>:
-          number of good shots then longest filmstrip.
-        </p>
-        <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
-          nombre de bonnes s&eacute;ries puis s&eacute;quence la plus longue.
-        </p>
+        <!-- tie breaker information -->
+        <div id="tie">
+          <p lang="en"><i>Tie breaker</i>:
+            number of good shots then longest filmstrip.
+          </p>
+          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+            nombre de bonnes s&eacute;ries puis s&eacute;quence la plus longue.
+          </p>
+        </div>
+        <!-- date information -->
+        <i><div class="text-center" id="date"></div></i>
       </div>
     </div>
     <!-- JavaScript -->
