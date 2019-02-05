@@ -14,8 +14,22 @@
     <title>BGSS</title>
   </head>
   <body>
+    <div class="reveal" id="about" data-reveal>
+      <p class="lead">BGSS</p>      
+      <p>version: 1.11</p>
+      <p>date: 2019/02/05</p>
+      <p>source: <a href="https://github.com/corlio/bgss">https://github.com/corlio/bgss</a></p>
+      <button class="close-button" data-close aria-label="Close" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
     <div class="top-bar">
-      <div class="top-bar-left" id="title">BoardGame Score Sheet (BGSS)</div>
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><button class="clear button" data-open="about">&quest;</button></li>
+          <li class="top-bar-title" id="title">BoardGame Score Sheet (BGSS)</li>
+        </ul>
+      </div>
     </div>
     <div class="grid-container">
       <div class="grid-x grid-padding-x">&nbsp;</div>
