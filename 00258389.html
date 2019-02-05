@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+    <link rel="stylesheet" href="css/bgss.min.css"/>
+    <title>BGSS</title>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <a class="menu-icon" style="margin-right: 1em" href="."></a><span id="title"><!-- dynamic --></span>
+      </div>
+    </div>
+    <ul class="tabs" data-tabs id="tabs">
+      <!-- dynamic -->
+      <li class="tabs-title"><a href="#options">?</a></li>
+      <li class="tabs-title"><a href="#results">=</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
+      <!-- tab for the options (variants) -->
+      <div class="tabs-panel" id="options">
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">&nbsp;</div>
+          <div class="grid-x grid-padding-x">
+            <div class="cell">
+              <span lang="en" class="text-left">Variants</span>
+              <span lang="fr" class="text-left">Variantes</span>
+            </div>
+          </div>
+          <div class="grid-x grid-padding-x">&nbsp;</div>
+          <!-- variante 1 -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="variant1" class="text-right middle">Great loans, worse actions</label>
+              <label lang="fr" for="variant1" class="text-right middle">Meilleurs emprunts, pires actions</label>
+            </div>
+            <div class="small-3 cell switch">
+              <input type="checkbox" id="variant1" class="switch-input">
+              <label class="switch-paddle" for="variant1"></label>
+            </div>
+          </div>
+          <!-- variante 2 -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="variant2" class="text-right middle">Valuable surplus production</label>
+              <label lang="fr" for="variant2" class="text-right middle">Surplus de production valoris&eacute;</label>
+            </div>
+            <div class="small-3 cell switch">
+              <input type="checkbox" id="variant2" class="switch-input">
+              <label class="switch-paddle" for="variant2"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- per-player tab to be cloned -->
+      <div class="tabs-panel" id="_player_">
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">&nbsp;</div>
+          <!-- free people -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="people" class="text-right middle">People not working</label>
+              <label lang="fr" for="people" class="text-right middle">Habitants ne travaillant pas</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="people" min="0">
+            </div>
+          </div>
+          <!-- surplus energy production -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="xenergy" class="text-right middle">Surplus energy production</label>
+              <label lang="fr" for="xenergy" class="text-right middle">Surplus de production d'&eacute;nergie</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="xenergy" min="0">
+            </div>
+          </div>
+          <!-- surplus food production -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="xfood" class="text-right middle">Surplus food production</label>
+              <label lang="fr" for="xfood" class="text-right middle">Surplus de production de nourriture</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="xfood" min="0">
+            </div>
+          </div>
+          <!-- quarters VPs (could be negative)  -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="quarters" class="text-right middle">Living quarters VPs</label>
+              <label lang="fr" for="quarters" class="text-right middle">PV des quartiers d'habitation</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="quarters">
+            </div>
+          </div>
+          <!-- remaining loans -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="loans" class="text-right middle">Loans (of value 5)</label>
+              <label lang="fr" for="loans" class="text-right middle">Emprunts (de valeur 5)</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="loans" min="0">
+            </div>
+          </div>
+          <!-- unused actions -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="actions" class="text-right middle">Unused actions</label>
+              <label lang="fr" for="actions" class="text-right middle">Actions inutilis&eacute;es</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="actions" min="0" max="5">
+            </div>
+          </div>
+          <!-- leftover energy -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="energy" class="text-right middle">Energy</label>
+              <label lang="fr" for="energy" class="text-right middle">&Eacute;nergie</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="energy" min="0">
+            </div>
+          </div>
+          <!-- leftover food -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="food" class="text-right middle">Food</label>
+              <label lang="fr" for="food" class="text-right middle">Nourriture</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="food" min="0">
+            </div>
+          </div>
+          <!-- leftover money -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="money" class="text-right middle">Money</label>
+              <label lang="fr" for="money" class="text-right middle">Argent</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="money" min="0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tab for the results -->
+      <div class="tabs-panel" id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+              </th>
+              <th>
+                <span lang="en">Victory Points</span>
+                <span lang="fr">Points de victoire</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dynamic -->
+          </tbody>
+        </table>
+        <!-- tie breaker information -->
+        <div id="tie">
+          <p lang="en"><i>Tie breaker</i>:
+            none...
+          </p>
+          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+            aucun...
+          </p>
+        </div>
+        <!-- date information -->
+        <i><div class="text-center" id="date"></div></i>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.min.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_game);
+    </script>
+  </body>
+</html>
