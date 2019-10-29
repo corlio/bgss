@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+    <link rel="stylesheet" href="css/bgss.min.css"/>
+    <title>BGSS</title>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><a href=".">&#8962;</a></li>
+          <li class="top-bar-title" id="title"><!-- dynamic --></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="tabs" data-tabs id="tabs">
+      <!-- dynamic -->
+      <li class="tabs-title"><a href="#results">=</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
+      <!-- per-player tab to be cloned -->
+      <div class="tabs-panel" id="_player_">
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">&nbsp;</div>
+          <!-- number of log book tokens -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="books" class="text-right middle">Number of log books</label>
+              <label lang="fr" for="books" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="books" min="0">
+            </div>
+          </div>
+          <!-- number of extra steps for the 1 sail ship -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="ship1" class="text-right middle">Extra ship steps (one sail)</label>
+              <label lang="fr" for="ship1" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="ship1" min="0" max="4">
+            </div>
+          </div>
+          <!-- number of extra steps for the 2 sails ship -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="ship2" class="text-right middle">Extra ship steps (two sails)</label>
+              <label lang="fr" for="ship2" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="ship2" min="0" max="4">
+            </div>
+          </div>
+          <!-- number of anchor tokens -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="anchors" class="text-right middle">Number of anchors</label>
+              <label lang="fr" for="anchors" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="anchors" min="0">
+            </div>
+          </div>
+          <!-- VPs from royal order cards -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="royal" class="text-right middle">Royal order VPs</label>
+              <label lang="fr" for="royal" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="royal" min="0">
+            </div>
+          </div>
+          <!-- VPs from building cards -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="building" class="text-right middle">Building VPs</label>
+              <label lang="fr" for="building" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="building" min="0">
+            </div>
+          </div>
+          <!-- number of coins in the storage area -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="coins" class="text-right middle">Number of coins in storage</label>
+              <label lang="fr" for="coins" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="coins" min="0">
+            </div>
+          </div>
+          <!-- number of resources in the storage area -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="resources" class="text-right middle">Number of resources in storage</label>
+              <label lang="fr" for="resources" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="resources" min="0">
+            </div>
+          </div>
+          <!-- number of steps on the cartographer track -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="cartographer" class="text-right middle">Number of cartographer steps</label>
+              <label lang="fr" for="cartographer" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="cartographer" min="0">
+            </div>
+          </div>
+          <!-- number of double landscape tiles in reserve -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="landscape" class="text-right middle">Number of double landscape tiles in reserve</label>
+              <label lang="fr" for="landscape" class="text-right middle">???</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="landscape" min="0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tab for the results -->
+      <div class="tabs-panel" id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+              </th>
+              <th>
+                <span lang="en">Victory Points</span>
+                <span lang="fr">Points de victoire</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dynamic -->
+          </tbody>
+        </table>
+        <!-- tie breaker information -->
+        <div id="tie">
+          <p lang="en"><i>Tie breaker</i>:
+            least number of uncharted spaces.
+          </p>
+          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+            ???
+          </p>
+        </div>
+        <!-- date information -->
+        <i><div class="text-center" id="date"></div></i>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.min.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_game);
+    </script>
+  </body>
+</html>
