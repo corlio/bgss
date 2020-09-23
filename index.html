@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en" manifest="manifest.appcache">
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -12,12 +12,18 @@
     <link rel="stylesheet" href="css/foundation.min.css"/>
     <link rel="stylesheet" href="css/bgss.min.css"/>
     <title>BGSS</title>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        if ("serviceWorker" in navigator)
+          navigator.serviceWorker.register("swac.js");
+      });
+    </script>
   </head>
   <body>
     <div class="reveal" id="about" data-reveal>
       <p class="lead">BGSS</p>      
-      <p>version: 1.11</p>
-      <p>date: 2019/02/05</p>
+      <p>version: 1.12</p>
+      <p>date: 2020/09/23</p>
       <p>source: <a href="https://github.com/corlio/bgss">https://github.com/corlio/bgss</a></p>
       <button class="close-button" data-close aria-label="Close" type="button">
         <span aria-hidden="true">&times;</span>
