@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+    <link rel="stylesheet" href="css/bgss.min.css"/>
+    <title>BGSS</title>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><a href=".">&#8962;</a></li>
+          <li class="top-bar-title" id="title"><!-- dynamic --></li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">&nbsp;</div>
+      <div class="grid-x grid-padding-x">
+        <div class="cell text-center">
+          <span lang="en">Column value</span>
+          <span lang="fr">Valeur de la colonne</span>
+          :
+          <span id="value">0</span>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">&nbsp;</div>
+      <!-- header -->
+      <div class="grid-x">
+        <div class="small-3 cell">
+          <label lang="en" class="text-center">Player</label>
+          <label lang="fr" class="text-center">Joueur</label>
+        </div>
+        <div class="small-3 cell">
+          <label lang="en" class="text-center">Sections</label>
+          <label lang="fr" class="text-center">Sections</label>
+        </div>
+        <div class="small-3 cell">
+          <label lang="en" class="text-center">Ornaments</label>
+          <label lang="fr" class="text-center">Ornements</label>
+        </div>
+        <div class="small-3 cell">
+          <label lang="en" class="text-center">VPs</label>
+          <label lang="fr" class="text-center">PV</label>
+        </div>
+      </div>
+      <div id="rows">
+        <!-- player to be cloned -->
+        <div class="grid-x" id="row">
+          <div class="small-3 cell">
+            <input type="text" id="name" class="no-margin" readonly>
+          </div>
+          <div class="small-3 cell">
+            <select id="sections" class="no-margin">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div class="small-3 cell">
+            <select id="ornaments" class="no-margin">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="small-3 cell">
+            <input type="text" id="score" class="no-margin" readonly>
+          </div>
+        </div>
+      </div>
+      <!-- footer-->
+      <div class="grid-x grid-padding-x">&nbsp;</div>
+      <div class="grid-x grid-padding-x">
+        <div class="cell text-center">
+          <a class="button" id="reset">Reset</a>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.min.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_game);
+    </script>
+  </body>
+</html>
