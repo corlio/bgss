@@ -2,7 +2,7 @@
 // service worker application cache
 //
 
-var CACHE = 'v20210329145331';
+var CACHE = 'v20210528112240';
 
 var AUTO = [
     '00000050.html',
@@ -19,6 +19,7 @@ var AUTO = [
     '00228959.html',
     '00258389.html',
     '00269511.html',
+    '00312484.html',
     'css/bgss.min.css',
     'css/foundation.min.css',
     'favicon.ico',

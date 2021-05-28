@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+    <link rel="stylesheet" href="css/bgss.min.css"/>
+    <title>BGSS</title>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><a href=".">&#8962;</a></li>
+          <li class="top-bar-title" id="title"><!-- dynamic --></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="tabs" data-tabs id="tabs">
+      <!-- dynamic -->
+      <li class="tabs-title"><a href="#results">=</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
+      <!-- per-player tab to be cloned -->
+      <div class="tabs-panel" id="_player_">
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">&nbsp;</div>
+          <!-- research score -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="research" class="text-right middle">Research VPs</label>
+              <label lang="fr" for="research" class="text-right middle">PV de recherche</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="research" min="0">
+            </div>
+          </div>
+          <!-- temple score -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="temple" class="text-right middle">Temple VPs</label>
+              <label lang="fr" for="temple" class="text-right middle">PV des temples</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="temple" min="0">
+            </div>
+          </div>
+          <!-- idol count -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="idol" class="text-right middle">Number of idols</label>
+              <label lang="fr" for="idol" class="text-right middle">Nombre d'idoles</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="idol" min="0">
+            </div>
+          </div>
+          <!-- empty idol spaces score -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="empty" class="text-right middle">Idol slots VPs</label>
+              <label lang="fr" for="empty" class="text-right middle">PV des emplacements idole</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="empty" min="0">
+            </div>
+          </div>
+          <!-- guardian count -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="guardian" class="text-right middle">Number of guardians</label>
+              <label lang="fr" for="guardian" class="text-right middle">Nombre de gardiens</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="guardian" min="0">
+            </div>
+          </div>
+          <!-- item card score -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="item" class="text-right middle">Item cards VPs</label>
+              <label lang="fr" for="item" class="text-right middle">PV des cartes objet</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="item" min="0">
+            </div>
+          </div>
+          <!-- artifact card score -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="artifact" class="text-right middle">Artifact cards VPs</label>
+              <label lang="fr" for="artifact" class="text-right middle">PV des cartes art&eacute;fact</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="artifact" min="0">
+            </div>
+          </div>
+          <!-- fear card count -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="fear1" class="text-right middle">Number of fear cards</label>
+              <label lang="fr" for="fear1" class="text-right middle">Nombre de cartes peur</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="fear1" min="0">
+            </div>
+          </div>
+          <!-- fear tile count -->
+          <div class="grid-x grid-padding-x">
+            <div class="small-9 cell">
+              <label lang="en" for="fear2" class="text-right middle">Number of fear tiles</label>
+              <label lang="fr" for="fear2" class="text-right middle">Nombre de tuiles peur</label>
+            </div>
+            <div class="small-3 cell">
+              <input type="number" id="fear2" min="0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tab for the results -->
+      <div class="tabs-panel" id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+              </th>
+              <th>
+                <span lang="en">Victory Points</span>
+                <span lang="fr">Points de victoire</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dynamic -->
+          </tbody>
+        </table>
+        <!-- tie breaker information -->
+        <div id="tie">
+          <p lang="en"><i>Tie breaker</i>:
+            the player who reached the Lost Temple first or,
+            if nobody reached it,
+            the player with the highest research score.
+          </p>
+          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
+            le premier joueur &agrave; avoir atteint le Temple Perdu ou,
+            si personne ne l'a atteint,
+            celui avec le meilleur score de recherche.
+          </p>
+        </div>
+        <!-- date information -->
+        <i><div class="text-center" id="date"></div></i>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/bgss.min.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(bgss.init_game);
+    </script>
+  </body>
+</html>
