@@ -24,7 +24,7 @@
     <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
       <!-- per-player tab to be cloned -->
       <div class="tabs-panel" id="_player_">
-        <!-- all colors in order (to help scoring all colors in order) -->
+        <!-- all colors in order (only to help scoring all colors in order) -->
         <p class="text-center">
           <span class="square10" style="background:#43bdd9">&nbsp;</span><!--  blue  -->
           <span class="square10" style="background:#ff70a0">&nbsp;</span><!--  red   -->
@@ -44,7 +44,7 @@
             </tr>
             <tr lang="fr">
               <th>Couleur</th>
-              <th>Bonne s&eacute;rie</th>
+              <th>Clich&eacute; r&eacute;ussi</th>
               <th>Nettes</th>
               <th>Floues</th>
             </tr>
@@ -227,15 +227,15 @@
             </tr>
           </tbody>
         </table>
-        <!-- filmstrip of regret -->
+        <!-- missed shot (aka filmstrip of regret) -->
         <div class="grid-container">
           <div class="grid-x grid-padding-x">
             <div class="small-9 cell">
-              <label lang="en" for="regret" class="text-right middle">Filmstrip of Regret</label>
-              <label lang="fr" for="regret" class="text-right middle">S&eacute;quence abandonn&eacute;e</label>
+              <label lang="en" for="bad" class="text-right middle">Missed Shot</label>
+              <label lang="fr" for="bad" class="text-right middle">Photo rat&eacute;e</label>
             </div>
             <div class="small-3 cell">
-              <select id="regret">
+              <select id="bad">
                 <option value="0" selected="selected"></option>
                 <option value="1" class="color1">1</option>
                 <option value="2" class="color2">2</option>
@@ -274,7 +274,7 @@
             number of good shots then longest filmstrip.
           </p>
           <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
-            nombre de bonnes s&eacute;ries puis s&eacute;quence la plus longue.
+            nombre de clich&eacute;s r&eacute;ussis puis album le plus long.
           </p>
         </div>
         <!-- date information -->
