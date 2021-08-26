@@ -1,199 +1,511 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/foundation.min.css"/>
-    <link rel="stylesheet" href="css/bgss.min.css"/>
     <title>BGSS</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bgss.css"/>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/lcng.js"></script>
+    <script src="js/bgss.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        $.BGSS.game('00258389');
+      });
+    </script>
   </head>
   <body>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><a href=".">&#8962;</a></li>
-          <li class="top-bar-title" id="title"><!-- dynamic --></li>
-        </ul>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <img src="img/house-door.svg" alt="Home" style="width: 1.5em" id="home">
+        <span class="navbar-text ms-auto me-auto">
+          <span lang="en">Futuropia</span>
+          <span lang="fr">Futuropia</span>
+        </span>
       </div>
-    </div>
-    <ul class="tabs" data-tabs id="tabs">
-      <li class="tabs-title"><a href="#options">?</a></li>
-      <!-- dynamic -->
-      <li class="tabs-title"><a href="#results">=</a></li>
+    </nav>
+    <!-- tabs -->
+    <ul class="nav nav-tabs" id="tab-links" role="tablist">
+      <li class="nav-item" id="tabl0" role="presentation">
+        <button class="nav-link active" data-bs-target="#tabc0" data-bs-toggle="tab" role="tab" type="button">?</button>
+      </li>
+      <li class="nav-item" id="tabl1" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc1" data-bs-toggle="tab" role="tab" type="button">1</button>
+      </li>
+      <li class="nav-item" id="tabl2" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc2" data-bs-toggle="tab" role="tab" type="button">2</button>
+      </li>
+      <li class="nav-item" id="tabl3" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc3" data-bs-toggle="tab" role="tab" type="button">3</button>
+      </li>
+      <li class="nav-item" id="tabl4" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc4" data-bs-toggle="tab" role="tab" type="button">4</button>
+      </li>
+      <li class="nav-item" id="tablx" role="presentation">
+        <button class="nav-link" data-bs-target="#tabcx" data-bs-toggle="tab" role="tab" type="button">=</button>
+      </li>
     </ul>
-    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
-      <!-- tab for the options (variants) -->
-      <div class="tabs-panel" id="options">
-        <div class="grid-container">
-          <div class="grid-x grid-padding-x">&nbsp;</div>
-          <div class="grid-x grid-padding-x">
-            <div class="cell">
-              <span lang="en" class="text-left">Variants</span>
-              <span lang="fr" class="text-left">Variantes</span>
+    <div class="tab-content" id="tab-contents">
+      <div class="tab-pane fade show active" id="tabc0" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="variant10">
+              <span lang="en">Great loans, worse actions</span>
+              <span lang="fr">Meilleurs emprunts, pires actions</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="001" id="variant10" type="checkbox">
             </div>
           </div>
-          <div class="grid-x grid-padding-x">&nbsp;</div>
-          <!-- variante 1 -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="variant1" class="text-right middle">Great loans, worse actions</label>
-              <label lang="fr" for="variant1" class="text-right middle">Meilleurs emprunts, pires actions</label>
-            </div>
-            <div class="small-3 cell switch">
-              <input type="checkbox" id="variant1" class="switch-input">
-              <label class="switch-paddle" for="variant1"></label>
-            </div>
-          </div>
-          <!-- variante 2 -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="variant2" class="text-right middle">Valuable surplus production</label>
-              <label lang="fr" for="variant2" class="text-right middle">Surplus de production valoris&eacute;</label>
-            </div>
-            <div class="small-3 cell switch">
-              <input type="checkbox" id="variant2" class="switch-input">
-              <label class="switch-paddle" for="variant2"></label>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="variant20">
+              <span lang="en">Valuable surplus production</span>
+              <span lang="fr">Surplus de production valorisé</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="002" id="variant20" type="checkbox">
             </div>
           </div>
         </div>
       </div>
-      <!-- per-player tab to be cloned -->
-      <div class="tabs-panel" id="_player_">
-        <div class="grid-container">
-          <div class="grid-x grid-padding-x">&nbsp;</div>
-          <!-- free people -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="people" class="text-right middle">People not working</label>
-              <label lang="fr" for="people" class="text-right middle">Habitants ne travaillant pas</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="people" min="0">
-            </div>
-          </div>
-          <!-- surplus energy production -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="xenergy" class="text-right middle">Surplus energy production</label>
-              <label lang="fr" for="xenergy" class="text-right middle">Surplus de production d'&eacute;nergie</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="xenergy" min="0">
-            </div>
-          </div>
-          <!-- surplus food production -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="xfood" class="text-right middle">Surplus food production</label>
-              <label lang="fr" for="xfood" class="text-right middle">Surplus de production de nourriture</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="xfood" min="0">
-            </div>
-          </div>
-          <!-- quarters VPs (could be negative)  -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="quarters" class="text-right middle">Living quarters VPs</label>
-              <label lang="fr" for="quarters" class="text-right middle">PV des quartiers d'habitation</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="quarters">
-            </div>
-          </div>
-          <!-- remaining loans -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="loans" class="text-right middle">Loans (of value 5)</label>
-              <label lang="fr" for="loans" class="text-right middle">Emprunts (de valeur 5)</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="loans" min="0">
-            </div>
-          </div>
-          <!-- unused actions -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="actions" class="text-right middle">Unused actions</label>
-              <label lang="fr" for="actions" class="text-right middle">Actions inutilis&eacute;es</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="actions" min="0" max="5">
-            </div>
-          </div>
-          <!-- leftover energy -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="energy" class="text-right middle">Energy</label>
-              <label lang="fr" for="energy" class="text-right middle">&Eacute;nergie</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="energy" min="0">
-            </div>
-          </div>
-          <!-- leftover food -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="food" class="text-right middle">Food</label>
-              <label lang="fr" for="food" class="text-right middle">Nourriture</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="food" min="0">
-            </div>
-          </div>
-          <!-- leftover money -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="money" class="text-right middle">Money</label>
-              <label lang="fr" for="money" class="text-right middle">Argent</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="money" min="0">
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- tab for the results -->
-      <div class="tabs-panel" id="results">
-        <table>
-          <thead>
-            <tr>
-              <th>
+      <div class="tab-pane fade" id="tabc1" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname1">
                 <span lang="en">Player</span>
                 <span lang="fr">Joueur</span>
-              </th>
-              <th>
-                <span lang="en">Victory Points</span>
-                <span lang="fr">Points de victoire</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- dynamic -->
-          </tbody>
-        </table>
-        <!-- tie breaker information -->
-        <div id="tie">
-          <p lang="en"><i>Tie breaker</i>:
-            none...
-          </p>
-          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
-            aucun...
-          </p>
+                &nbsp;1
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score1">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="people1">
+              <span lang="en">People not working</span>
+              <span lang="fr">Habitants ne travaillant pas</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="101" id="people1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="xenergy1">
+              <span lang="en">Surplus energy production</span>
+              <span lang="fr">Surplus de production d'énergie</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="102" id="xenergy1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="xfood1">
+              <span lang="en">Surplus food production</span>
+              <span lang="fr">Surplus de production de nourriture</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="103" id="xfood1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="quarters1">
+              <span lang="en">Living quarters VPs</span>
+              <span lang="fr">PV des quartiers d'habitation</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="104" id="quarters1" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="loans1">
+              <span lang="en">Loans (of value 5)</span>
+              <span lang="fr">Emprunts (de valeur 5)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="105" id="loans1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="actions1">
+              <span lang="en">Unused actions</span>
+              <span lang="fr">Actions inutilisées</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="106" id="actions1" max="5" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="energy1">
+              <span lang="en">Energy</span>
+              <span lang="fr">Énergie</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="107" id="energy1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="food1">
+              <span lang="en">Food</span>
+              <span lang="fr">Nourriture</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="108" id="food1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money1">
+              <span lang="en">Money</span>
+              <span lang="fr">Argent</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="109" id="money1" min="0" type="number">
+            </div>
+          </div>
         </div>
-        <!-- date information -->
-        <i><div class="text-center" id="date"></div></i>
+      </div>
+      <div class="tab-pane fade" id="tabc2" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname2">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;2
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score2">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="people2">
+              <span lang="en">People not working</span>
+              <span lang="fr">Habitants ne travaillant pas</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="201" id="people2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="xenergy2">
+              <span lang="en">Surplus energy production</span>
+              <span lang="fr">Surplus de production d'énergie</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="202" id="xenergy2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="xfood2">
+              <span lang="en">Surplus food production</span>
+              <span lang="fr">Surplus de production de nourriture</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="203" id="xfood2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="quarters2">
+              <span lang="en">Living quarters VPs</span>
+              <span lang="fr">PV des quartiers d'habitation</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="204" id="quarters2" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="loans2">
+              <span lang="en">Loans (of value 5)</span>
+              <span lang="fr">Emprunts (de valeur 5)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="205" id="loans2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="actions2">
+              <span lang="en">Unused actions</span>
+              <span lang="fr">Actions inutilisées</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="206" id="actions2" max="5" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="energy2">
+              <span lang="en">Energy</span>
+              <span lang="fr">Énergie</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="207" id="energy2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="food2">
+              <span lang="en">Food</span>
+              <span lang="fr">Nourriture</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="208" id="food2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money2">
+              <span lang="en">Money</span>
+              <span lang="fr">Argent</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="209" id="money2" min="0" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc3" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname3">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;3
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score3">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="people3">
+              <span lang="en">People not working</span>
+              <span lang="fr">Habitants ne travaillant pas</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="301" id="people3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="xenergy3">
+              <span lang="en">Surplus energy production</span>
+              <span lang="fr">Surplus de production d'énergie</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="302" id="xenergy3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="xfood3">
+              <span lang="en">Surplus food production</span>
+              <span lang="fr">Surplus de production de nourriture</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="303" id="xfood3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="quarters3">
+              <span lang="en">Living quarters VPs</span>
+              <span lang="fr">PV des quartiers d'habitation</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="304" id="quarters3" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="loans3">
+              <span lang="en">Loans (of value 5)</span>
+              <span lang="fr">Emprunts (de valeur 5)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="305" id="loans3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="actions3">
+              <span lang="en">Unused actions</span>
+              <span lang="fr">Actions inutilisées</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="306" id="actions3" max="5" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="energy3">
+              <span lang="en">Energy</span>
+              <span lang="fr">Énergie</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="307" id="energy3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="food3">
+              <span lang="en">Food</span>
+              <span lang="fr">Nourriture</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="308" id="food3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money3">
+              <span lang="en">Money</span>
+              <span lang="fr">Argent</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="309" id="money3" min="0" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc4" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname4">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;4
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score4">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="people4">
+              <span lang="en">People not working</span>
+              <span lang="fr">Habitants ne travaillant pas</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="401" id="people4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="xenergy4">
+              <span lang="en">Surplus energy production</span>
+              <span lang="fr">Surplus de production d'énergie</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="402" id="xenergy4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="xfood4">
+              <span lang="en">Surplus food production</span>
+              <span lang="fr">Surplus de production de nourriture</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="403" id="xfood4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="quarters4">
+              <span lang="en">Living quarters VPs</span>
+              <span lang="fr">PV des quartiers d'habitation</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="404" id="quarters4" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="loans4">
+              <span lang="en">Loans (of value 5)</span>
+              <span lang="fr">Emprunts (de valeur 5)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="405" id="loans4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="actions4">
+              <span lang="en">Unused actions</span>
+              <span lang="fr">Actions inutilisées</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="406" id="actions4" max="5" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="energy4">
+              <span lang="en">Energy</span>
+              <span lang="fr">Énergie</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="407" id="energy4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="food4">
+              <span lang="en">Food</span>
+              <span lang="fr">Nourriture</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="408" id="food4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money4">
+              <span lang="en">Money</span>
+              <span lang="fr">Argent</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="409" id="money4" min="0" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabcx" role="tabpanel">
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <span lang="en">Player</span>
+                  <span lang="fr">Joueur</span>
+                </th>
+                <th scope="col">
+                  <span lang="en">Victory Points</span>
+                  <span lang="fr">Points de victoire</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="srow1">
+                <td id="sname1">1</td>
+                <td class="score" id="score1">?</td>
+              </tr>
+              <tr id="srow2">
+                <td id="sname2">2</td>
+                <td class="score" id="score2">?</td>
+              </tr>
+              <tr id="srow3">
+                <td id="sname3">3</td>
+                <td class="score" id="score3">?</td>
+              </tr>
+              <tr id="srow4">
+                <td id="sname4">4</td>
+                <td class="score" id="score4">?</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row mt-2" id="tie">
+            <span class="col">
+              <span lang="en">
+                <span class="fst-italic">Tie breaker:</span>
+                <span> none...</span>
+              </span>
+              <span lang="fr">
+                <span class="fst-italic">Départage en cas d'égalité :</span>
+                <span> aucun...</span>
+              </span>
+            </span>
+          </div>
+          <div class="row mt-2 text-center">
+            <span class="col fst-italic" id="date">?</span>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/bgss.min.js"></script>
-    <script>
-      $(document).foundation();
-      $(document).ready(bgss.init_game);
-    </script>
   </body>
 </html>

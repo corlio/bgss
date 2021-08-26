@@ -1,167 +1,486 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/foundation.min.css"/>
-    <link rel="stylesheet" href="css/bgss.min.css"/>
     <title>BGSS</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bgss.css"/>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/lcng.js"></script>
+    <script src="js/bgss.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        $.BGSS.game('00312484');
+      });
+    </script>
   </head>
   <body>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><a href=".">&#8962;</a></li>
-          <li class="top-bar-title" id="title"><!-- dynamic --></li>
-        </ul>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <img src="img/house-door.svg" alt="Home" style="width: 1.5em" id="home">
+        <span class="navbar-text ms-auto me-auto">
+          <span lang="en">Lost Ruins of Arnak</span>
+          <span lang="fr">Les Ruines Perdues de Narak</span>
+        </span>
       </div>
-    </div>
-    <ul class="tabs" data-tabs id="tabs">
-      <!-- dynamic -->
-      <li class="tabs-title"><a href="#results">=</a></li>
+    </nav>
+    <!-- tabs -->
+    <ul class="nav nav-tabs" id="tab-links" role="tablist">
+      <li class="nav-item" id="tabl1" role="presentation">
+        <button class="nav-link active" data-bs-target="#tabc1" data-bs-toggle="tab" role="tab" type="button">1</button>
+      </li>
+      <li class="nav-item" id="tabl2" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc2" data-bs-toggle="tab" role="tab" type="button">2</button>
+      </li>
+      <li class="nav-item" id="tabl3" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc3" data-bs-toggle="tab" role="tab" type="button">3</button>
+      </li>
+      <li class="nav-item" id="tabl4" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc4" data-bs-toggle="tab" role="tab" type="button">4</button>
+      </li>
+      <li class="nav-item" id="tablx" role="presentation">
+        <button class="nav-link" data-bs-target="#tabcx" data-bs-toggle="tab" role="tab" type="button">=</button>
+      </li>
     </ul>
-    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
-      <!-- per-player tab to be cloned -->
-      <div class="tabs-panel" id="_player_">
-        <div class="grid-container">
-          <div class="grid-x grid-padding-x">&nbsp;</div>
-          <!-- research score -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="research" class="text-right middle">Research VPs</label>
-              <label lang="fr" for="research" class="text-right middle">PV de recherche</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="research" min="0">
-            </div>
-          </div>
-          <!-- temple score -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="temple" class="text-right middle">Temple VPs</label>
-              <label lang="fr" for="temple" class="text-right middle">PV des temples</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="temple" min="0">
-            </div>
-          </div>
-          <!-- idol count -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="idol" class="text-right middle">Number of idols</label>
-              <label lang="fr" for="idol" class="text-right middle">Nombre d'idoles</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="idol" min="0">
-            </div>
-          </div>
-          <!-- empty idol spaces score -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="empty" class="text-right middle">Idol slots VPs</label>
-              <label lang="fr" for="empty" class="text-right middle">PV des emplacements idole</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="empty" min="0">
-            </div>
-          </div>
-          <!-- guardian count -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="guardian" class="text-right middle">Number of guardians</label>
-              <label lang="fr" for="guardian" class="text-right middle">Nombre de gardiens</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="guardian" min="0">
-            </div>
-          </div>
-          <!-- item card score -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="item" class="text-right middle">Item cards VPs</label>
-              <label lang="fr" for="item" class="text-right middle">PV des cartes objet</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="item" min="0">
-            </div>
-          </div>
-          <!-- artifact card score -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="artifact" class="text-right middle">Artifact cards VPs</label>
-              <label lang="fr" for="artifact" class="text-right middle">PV des cartes art&eacute;fact</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="artifact" min="0">
-            </div>
-          </div>
-          <!-- fear card count -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="fear1" class="text-right middle">Number of fear cards</label>
-              <label lang="fr" for="fear1" class="text-right middle">Nombre de cartes peur</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="fear1" min="0">
-            </div>
-          </div>
-          <!-- fear tile count -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="fear2" class="text-right middle">Number of fear tiles</label>
-              <label lang="fr" for="fear2" class="text-right middle">Nombre de tuiles peur</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="fear2" min="0">
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- tab for the results -->
-      <div class="tabs-panel" id="results">
-        <table>
-          <thead>
-            <tr>
-              <th>
+    <div class="tab-content" id="tab-contents">
+      <div class="tab-pane fade show active" id="tabc1" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname1">
                 <span lang="en">Player</span>
                 <span lang="fr">Joueur</span>
-              </th>
-              <th>
-                <span lang="en">Victory Points</span>
-                <span lang="fr">Points de victoire</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- dynamic -->
-          </tbody>
-        </table>
-        <!-- tie breaker information -->
-        <div id="tie">
-          <p lang="en"><i>Tie breaker</i>:
-            the player who reached the Lost Temple first or,
-            if nobody reached it,
-            the player with the highest research score.
-          </p>
-          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
-            le premier joueur &agrave; avoir atteint le Temple Perdu ou,
-            si personne ne l'a atteint,
-            celui avec le meilleur score de recherche.
-          </p>
+                &nbsp;1
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score1">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="research1">
+              <span lang="en">Research VPs</span>
+              <span lang="fr">PV de recherche</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="101" id="research1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="temple1">
+              <span lang="en">Temple VPs</span>
+              <span lang="fr">PV des temples</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="102" id="temple1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="idol1">
+              <span lang="en">Number of idols</span>
+              <span lang="fr">Nombre d'idoles</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="103" id="idol1" max="12" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="slot1">
+              <span lang="en">Idol slots VPs</span>
+              <span lang="fr">PV des emplacements idole</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="104" id="slot1" max="10" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guardian1">
+              <span lang="en">Number of guardians</span>
+              <span lang="fr">Nombre de gardiens</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="105" id="guardian1" max="12" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="artifact1">
+              <span lang="en">Artifact cards VPs</span>
+              <span lang="fr">PV des cartes artéfact</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="106" id="artifact1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="item1">
+              <span lang="en">Item cards VPs</span>
+              <span lang="fr">PV des cartes objet</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="107" id="item1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="fearc1">
+              <span lang="en">Number of fear cards</span>
+              <span lang="fr">Nombre de cartes peur</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="108" id="fearc1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="feart1">
+              <span lang="en">Number of fear tiles</span>
+              <span lang="fr">Nombre de tuiles peur</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="109" id="feart1" min="0" type="number">
+            </div>
+          </div>
         </div>
-        <!-- date information -->
-        <i><div class="text-center" id="date"></div></i>
+      </div>
+      <div class="tab-pane fade" id="tabc2" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname2">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;2
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score2">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="research2">
+              <span lang="en">Research VPs</span>
+              <span lang="fr">PV de recherche</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="201" id="research2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="temple2">
+              <span lang="en">Temple VPs</span>
+              <span lang="fr">PV des temples</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="202" id="temple2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="idol2">
+              <span lang="en">Number of idols</span>
+              <span lang="fr">Nombre d'idoles</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="203" id="idol2" max="12" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="slot2">
+              <span lang="en">Idol slots VPs</span>
+              <span lang="fr">PV des emplacements idole</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="204" id="slot2" max="10" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guardian2">
+              <span lang="en">Number of guardians</span>
+              <span lang="fr">Nombre de gardiens</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="205" id="guardian2" max="12" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="artifact2">
+              <span lang="en">Artifact cards VPs</span>
+              <span lang="fr">PV des cartes artéfact</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="206" id="artifact2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="item2">
+              <span lang="en">Item cards VPs</span>
+              <span lang="fr">PV des cartes objet</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="207" id="item2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="fearc2">
+              <span lang="en">Number of fear cards</span>
+              <span lang="fr">Nombre de cartes peur</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="208" id="fearc2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="feart2">
+              <span lang="en">Number of fear tiles</span>
+              <span lang="fr">Nombre de tuiles peur</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="209" id="feart2" min="0" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc3" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname3">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;3
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score3">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="research3">
+              <span lang="en">Research VPs</span>
+              <span lang="fr">PV de recherche</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="301" id="research3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="temple3">
+              <span lang="en">Temple VPs</span>
+              <span lang="fr">PV des temples</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="302" id="temple3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="idol3">
+              <span lang="en">Number of idols</span>
+              <span lang="fr">Nombre d'idoles</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="303" id="idol3" max="12" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="slot3">
+              <span lang="en">Idol slots VPs</span>
+              <span lang="fr">PV des emplacements idole</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="304" id="slot3" max="10" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guardian3">
+              <span lang="en">Number of guardians</span>
+              <span lang="fr">Nombre de gardiens</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="305" id="guardian3" max="12" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="artifact3">
+              <span lang="en">Artifact cards VPs</span>
+              <span lang="fr">PV des cartes artéfact</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="306" id="artifact3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="item3">
+              <span lang="en">Item cards VPs</span>
+              <span lang="fr">PV des cartes objet</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="307" id="item3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="fearc3">
+              <span lang="en">Number of fear cards</span>
+              <span lang="fr">Nombre de cartes peur</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="308" id="fearc3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="feart3">
+              <span lang="en">Number of fear tiles</span>
+              <span lang="fr">Nombre de tuiles peur</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="309" id="feart3" min="0" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc4" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname4">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;4
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score4">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="research4">
+              <span lang="en">Research VPs</span>
+              <span lang="fr">PV de recherche</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="401" id="research4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="temple4">
+              <span lang="en">Temple VPs</span>
+              <span lang="fr">PV des temples</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="402" id="temple4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="idol4">
+              <span lang="en">Number of idols</span>
+              <span lang="fr">Nombre d'idoles</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="403" id="idol4" max="12" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="slot4">
+              <span lang="en">Idol slots VPs</span>
+              <span lang="fr">PV des emplacements idole</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="404" id="slot4" max="10" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guardian4">
+              <span lang="en">Number of guardians</span>
+              <span lang="fr">Nombre de gardiens</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="405" id="guardian4" max="12" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="artifact4">
+              <span lang="en">Artifact cards VPs</span>
+              <span lang="fr">PV des cartes artéfact</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="406" id="artifact4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="item4">
+              <span lang="en">Item cards VPs</span>
+              <span lang="fr">PV des cartes objet</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="407" id="item4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="fearc4">
+              <span lang="en">Number of fear cards</span>
+              <span lang="fr">Nombre de cartes peur</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="408" id="fearc4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="feart4">
+              <span lang="en">Number of fear tiles</span>
+              <span lang="fr">Nombre de tuiles peur</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="409" id="feart4" min="0" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabcx" role="tabpanel">
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <span lang="en">Player</span>
+                  <span lang="fr">Joueur</span>
+                </th>
+                <th scope="col">
+                  <span lang="en">Victory Points</span>
+                  <span lang="fr">Points de victoire</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="srow1">
+                <td id="sname1">1</td>
+                <td class="score" id="score1">?</td>
+              </tr>
+              <tr id="srow2">
+                <td id="sname2">2</td>
+                <td class="score" id="score2">?</td>
+              </tr>
+              <tr id="srow3">
+                <td id="sname3">3</td>
+                <td class="score" id="score3">?</td>
+              </tr>
+              <tr id="srow4">
+                <td id="sname4">4</td>
+                <td class="score" id="score4">?</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row mt-2" id="tie">
+            <span class="col">
+              <span lang="en">
+                <span class="fst-italic">Tie breaker:</span>
+                <span> the player who reached the Lost Temple first or, if nobody reached it, the player with the highest research score.</span>
+              </span>
+              <span lang="fr">
+                <span class="fst-italic">Départage en cas d'égalité :</span>
+                <span> le premier joueur à avoir atteint le Temple Perdu ou, si personne ne l'a atteint, celui avec le meilleur score de recherche.</span>
+              </span>
+            </span>
+          </div>
+          <div class="row mt-2 text-center">
+            <span class="col fst-italic" id="date">?</span>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/bgss.min.js"></script>
-    <script>
-      $(document).foundation();
-      $(document).ready(bgss.init_game);
-    </script>
   </body>
 </html>

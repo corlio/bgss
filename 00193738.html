@@ -1,189 +1,558 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/foundation.min.css"/>
-    <link rel="stylesheet" href="css/bgss.min.css"/>
     <title>BGSS</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bgss.css"/>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/lcng.js"></script>
+    <script src="js/bgss.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        $.BGSS.game('00193738');
+      });
+    </script>
   </head>
   <body>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><a href=".">&#8962;</a></li>
-          <li class="top-bar-title" id="title"><!-- dynamic --></li>
-        </ul>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <img src="img/house-door.svg" alt="Home" style="width: 1.5em" id="home">
+        <span class="navbar-text ms-auto me-auto">
+          <span lang="en">Great Western Trail</span>
+          <span lang="fr">Great Western</span>
+        </span>
       </div>
-    </div>
-    <ul class="tabs" data-tabs id="tabs">
-      <!-- dynamic -->
-      <li class="tabs-title"><a href="#results">=</a></li>
+    </nav>
+    <!-- tabs -->
+    <ul class="nav nav-tabs" id="tab-links" role="tablist">
+      <li class="nav-item" id="tabl1" role="presentation">
+        <button class="nav-link active" data-bs-target="#tabc1" data-bs-toggle="tab" role="tab" type="button">1</button>
+      </li>
+      <li class="nav-item" id="tabl2" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc2" data-bs-toggle="tab" role="tab" type="button">2</button>
+      </li>
+      <li class="nav-item" id="tabl3" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc3" data-bs-toggle="tab" role="tab" type="button">3</button>
+      </li>
+      <li class="nav-item" id="tabl4" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc4" data-bs-toggle="tab" role="tab" type="button">4</button>
+      </li>
+      <li class="nav-item" id="tablx" role="presentation">
+        <button class="nav-link" data-bs-target="#tabcx" data-bs-toggle="tab" role="tab" type="button">=</button>
+      </li>
     </ul>
-    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
-      <!-- per-player tab to be cloned -->
-      <div class="tabs-panel" id="_player_">
-        <div class="grid-container">
-          <div class="grid-x grid-padding-x">&nbsp;</div>
-          <!-- amount of money -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="money" class="text-right middle">Money (&dollar;)</label>
-              <label lang="fr" for="money" class="text-right middle">Argent (&dollar;)</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="money" min="0">
-            </div>
-          </div>
-          <!-- VPs from buildings -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="buildings" class="text-right middle">Buildings VPs</label>
-              <label lang="fr" for="buildings" class="text-right middle">PV des b&acirc;timents</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="buildings" min="0">
-            </div>
-          </div>
-          <!-- VPs from cities -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="cities" class="text-right middle">Cities VPs</label>
-              <label lang="fr" for="cities" class="text-right middle">PV des villes</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="cities">
-            </div>
-          </div>
-          <!-- VPs from train stations -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="stations" class="text-right middle">Stations VPs</label>
-              <label lang="fr" for="stations" class="text-right middle">PV des gares</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="stations" min="0">
-            </div>
-          </div>
-          <!-- VPs from hazard tiles -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="hazard" class="text-right middle">Hazard Tiles VPs</label>
-              <label lang="fr" for="hazard" class="text-right middle">PV des tuiles danger</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="hazard" min="0">
-            </div>
-          </div>
-          <!-- VPs from cattle cards -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="cattle" class="text-right middle">Cattle Cards VPs</label>
-              <label lang="fr" for="cattle" class="text-right middle">PV des cartes b&eacute;tail</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="cattle" min="0">
-            </div>
-          </div>
-          <!-- VPs from objective cards -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="objective" class="text-right middle">Objective Cards VPs</label>
-              <label lang="fr" for="objective" class="text-right middle">PV des cartes objectif</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="objective">
-            </div>
-          </div>
-          <!-- VPs from station master tiles -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="master" class="text-right middle">Station Master Tiles VPs</label>
-              <label lang="fr" for="master" class="text-right middle">PV des tuiles chef de gare</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="master" min="0">
-            </div>
-          </div>
-          <!-- number of workers in last 2 columns -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="workers" class="text-right middle">
-                Number of Workers in the Last 2 Columns
-              </label>
-              <label lang="fr" for="workers" class="text-right middle">
-                Nombre de travailleurs dans les 2 derni&egrave;res colonnes
-              </label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="workers" min="0" max="6">
-            </div>
-          </div>
-          <!-- player board bonus disc -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="disc" class="text-right middle">Player Board 3 VPs Disc</label>
-              <label lang="fr" for="disc" class="text-right middle">Disque 3 PV du plateau du joueur</label>
-            </div>
-            <div class="small-3 cell switch">
-              <input type="checkbox" id="disc" class="switch-input">
-              <label class="switch-paddle" for="disc"></label>
-            </div>
-          </div>
-          <!-- job market token -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="job" class="text-right middle">Job Market Token</label>
-              <label lang="fr" for="job" class="text-right middle">Jeton march&eacute; de l'emploi</label>
-            </div>
-            <div class="small-3 cell switch">
-              <input type="checkbox" id="job" class="highlander switch-input">
-              <label class="switch-paddle" for="job"></label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- tab for the results -->
-      <div class="tabs-panel" id="results">
-        <table>
-          <thead>
-            <tr>
-              <th>
+    <div class="tab-content" id="tab-contents">
+      <div class="tab-pane fade show active" id="tabc1" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname1">
                 <span lang="en">Player</span>
                 <span lang="fr">Joueur</span>
-              </th>
-              <th>
-                <span lang="en">Victory Points</span>
-                <span lang="fr">Points de victoire</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- dynamic -->
-          </tbody>
-        </table>
-        <!-- tie breaker information -->
-        <div id="tie">
-          <p lang="en"><i>Tie breaker</i>:
-            none...
-          </p>
-          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
-            aucun...
-          </p>
+                &nbsp;1
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score1">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money1">
+              <span lang="en">Money (&dollar;)</span>
+              <span lang="fr">Argent (&dollar;)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="101" id="money1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="buildings1">
+              <span lang="en">Buildings VPs</span>
+              <span lang="fr">PV des bâtiments</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="102" id="buildings1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="cities1">
+              <span lang="en">Cities VPs</span>
+              <span lang="fr">PV des villes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="103" id="cities1" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="stations1">
+              <span lang="en">Stations VPs</span>
+              <span lang="fr">PV des gares</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="104" id="stations1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="hazard1">
+              <span lang="en">Hazard Tiles VPs</span>
+              <span lang="fr">PV des tuiles danger</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="105" id="hazard1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="cattle1">
+              <span lang="en">Cattle Cards VPs</span>
+              <span lang="fr">PV des cartes bétail</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="106" id="cattle1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="objective1">
+              <span lang="en">Objective Cards VPs</span>
+              <span lang="fr">PV des cartes objectif</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="107" id="objective1" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="master1">
+              <span lang="en">Station Master Tiles VPs</span>
+              <span lang="fr">PV des tuiles chef de gare</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="108" id="master1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="workers1">
+              <span lang="en">Number of Workers in the Last 2 Columns</span>
+              <span lang="fr">Nombre de travailleurs dans les 2 dernières colonnes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="109" id="workers1" max="6" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="disc1">
+              <span lang="en">Player Board 3 VPs Disc</span>
+              <span lang="fr">Disque 3 PV du plateau du joueur</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="110" id="disc1" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="job1">
+              <span lang="en">Job Market Token</span>
+              <span lang="fr">Jeton marché de l'emploi</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="highlander form-check-input" data-index="111" id="job1" type="checkbox">
+            </div>
+          </div>
         </div>
-        <!-- date information -->
-        <i><div class="text-center" id="date"></div></i>
+      </div>
+      <div class="tab-pane fade" id="tabc2" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname2">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;2
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score2">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money2">
+              <span lang="en">Money (&dollar;)</span>
+              <span lang="fr">Argent (&dollar;)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="201" id="money2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="buildings2">
+              <span lang="en">Buildings VPs</span>
+              <span lang="fr">PV des bâtiments</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="202" id="buildings2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="cities2">
+              <span lang="en">Cities VPs</span>
+              <span lang="fr">PV des villes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="203" id="cities2" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="stations2">
+              <span lang="en">Stations VPs</span>
+              <span lang="fr">PV des gares</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="204" id="stations2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="hazard2">
+              <span lang="en">Hazard Tiles VPs</span>
+              <span lang="fr">PV des tuiles danger</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="205" id="hazard2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="cattle2">
+              <span lang="en">Cattle Cards VPs</span>
+              <span lang="fr">PV des cartes bétail</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="206" id="cattle2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="objective2">
+              <span lang="en">Objective Cards VPs</span>
+              <span lang="fr">PV des cartes objectif</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="207" id="objective2" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="master2">
+              <span lang="en">Station Master Tiles VPs</span>
+              <span lang="fr">PV des tuiles chef de gare</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="208" id="master2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="workers2">
+              <span lang="en">Number of Workers in the Last 2 Columns</span>
+              <span lang="fr">Nombre de travailleurs dans les 2 dernières colonnes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="209" id="workers2" max="6" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="disc2">
+              <span lang="en">Player Board 3 VPs Disc</span>
+              <span lang="fr">Disque 3 PV du plateau du joueur</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="210" id="disc2" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="job2">
+              <span lang="en">Job Market Token</span>
+              <span lang="fr">Jeton marché de l'emploi</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="highlander form-check-input" data-index="211" id="job2" type="checkbox">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc3" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname3">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;3
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score3">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money3">
+              <span lang="en">Money (&dollar;)</span>
+              <span lang="fr">Argent (&dollar;)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="301" id="money3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="buildings3">
+              <span lang="en">Buildings VPs</span>
+              <span lang="fr">PV des bâtiments</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="302" id="buildings3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="cities3">
+              <span lang="en">Cities VPs</span>
+              <span lang="fr">PV des villes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="303" id="cities3" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="stations3">
+              <span lang="en">Stations VPs</span>
+              <span lang="fr">PV des gares</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="304" id="stations3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="hazard3">
+              <span lang="en">Hazard Tiles VPs</span>
+              <span lang="fr">PV des tuiles danger</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="305" id="hazard3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="cattle3">
+              <span lang="en">Cattle Cards VPs</span>
+              <span lang="fr">PV des cartes bétail</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="306" id="cattle3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="objective3">
+              <span lang="en">Objective Cards VPs</span>
+              <span lang="fr">PV des cartes objectif</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="307" id="objective3" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="master3">
+              <span lang="en">Station Master Tiles VPs</span>
+              <span lang="fr">PV des tuiles chef de gare</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="308" id="master3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="workers3">
+              <span lang="en">Number of Workers in the Last 2 Columns</span>
+              <span lang="fr">Nombre de travailleurs dans les 2 dernières colonnes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="309" id="workers3" max="6" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="disc3">
+              <span lang="en">Player Board 3 VPs Disc</span>
+              <span lang="fr">Disque 3 PV du plateau du joueur</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="310" id="disc3" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="job3">
+              <span lang="en">Job Market Token</span>
+              <span lang="fr">Jeton marché de l'emploi</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="highlander form-check-input" data-index="311" id="job3" type="checkbox">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc4" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname4">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;4
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score4">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money4">
+              <span lang="en">Money (&dollar;)</span>
+              <span lang="fr">Argent (&dollar;)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="401" id="money4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="buildings4">
+              <span lang="en">Buildings VPs</span>
+              <span lang="fr">PV des bâtiments</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="402" id="buildings4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="cities4">
+              <span lang="en">Cities VPs</span>
+              <span lang="fr">PV des villes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="403" id="cities4" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="stations4">
+              <span lang="en">Stations VPs</span>
+              <span lang="fr">PV des gares</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="404" id="stations4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="hazard4">
+              <span lang="en">Hazard Tiles VPs</span>
+              <span lang="fr">PV des tuiles danger</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="405" id="hazard4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="cattle4">
+              <span lang="en">Cattle Cards VPs</span>
+              <span lang="fr">PV des cartes bétail</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="406" id="cattle4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="objective4">
+              <span lang="en">Objective Cards VPs</span>
+              <span lang="fr">PV des cartes objectif</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="407" id="objective4" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="master4">
+              <span lang="en">Station Master Tiles VPs</span>
+              <span lang="fr">PV des tuiles chef de gare</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="408" id="master4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="workers4">
+              <span lang="en">Number of Workers in the Last 2 Columns</span>
+              <span lang="fr">Nombre de travailleurs dans les 2 dernières colonnes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="409" id="workers4" max="6" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="disc4">
+              <span lang="en">Player Board 3 VPs Disc</span>
+              <span lang="fr">Disque 3 PV du plateau du joueur</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="410" id="disc4" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="job4">
+              <span lang="en">Job Market Token</span>
+              <span lang="fr">Jeton marché de l'emploi</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="highlander form-check-input" data-index="411" id="job4" type="checkbox">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabcx" role="tabpanel">
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <span lang="en">Player</span>
+                  <span lang="fr">Joueur</span>
+                </th>
+                <th scope="col">
+                  <span lang="en">Victory Points</span>
+                  <span lang="fr">Points de victoire</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="srow1">
+                <td id="sname1">1</td>
+                <td class="score" id="score1">?</td>
+              </tr>
+              <tr id="srow2">
+                <td id="sname2">2</td>
+                <td class="score" id="score2">?</td>
+              </tr>
+              <tr id="srow3">
+                <td id="sname3">3</td>
+                <td class="score" id="score3">?</td>
+              </tr>
+              <tr id="srow4">
+                <td id="sname4">4</td>
+                <td class="score" id="score4">?</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row mt-2" id="tie">
+            <span class="col">
+              <span lang="en">
+                <span class="fst-italic">Tie breaker:</span>
+                <span> none...</span>
+              </span>
+              <span lang="fr">
+                <span class="fst-italic">Départage en cas d'égalité :</span>
+                <span> aucun...</span>
+              </span>
+            </span>
+          </div>
+          <div class="row mt-2 text-center">
+            <span class="col fst-italic" id="date">?</span>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/bgss.min.js"></script>
-    <script>
-      $(document).foundation();
-      $(document).ready(bgss.init_game);
-    </script>
   </body>
 </html>

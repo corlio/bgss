@@ -1,195 +1,569 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/foundation.min.css"/>
-    <link rel="stylesheet" href="css/bgss.min.css"/>
     <title>BGSS</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bgss.css"/>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/lcng.js"></script>
+    <script src="js/bgss.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        $.BGSS.game('00216132');
+      });
+    </script>
   </head>
   <body>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><a href=".">&#8962;</a></li>
-          <li class="top-bar-title" id="title"><!-- dynamic --></li>
-        </ul>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <img src="img/house-door.svg" alt="Home" style="width: 1.5em" id="home">
+        <span class="navbar-text ms-auto me-auto">
+          <span lang="en">Clans of Caledonia</span>
+          <span lang="fr">Clans of Caledonia</span>
+        </span>
       </div>
-    </div>
-    <ul class="tabs" data-tabs id="tabs">
-      <!-- dynamic -->
-      <li class="tabs-title"><a href="#results">=</a></li>
+    </nav>
+    <!-- tabs -->
+    <ul class="nav nav-tabs" id="tab-links" role="tablist">
+      <li class="nav-item" id="tabl1" role="presentation">
+        <button class="nav-link active" data-bs-target="#tabc1" data-bs-toggle="tab" role="tab" type="button">1</button>
+      </li>
+      <li class="nav-item" id="tabl2" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc2" data-bs-toggle="tab" role="tab" type="button">2</button>
+      </li>
+      <li class="nav-item" id="tabl3" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc3" data-bs-toggle="tab" role="tab" type="button">3</button>
+      </li>
+      <li class="nav-item" id="tabl4" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc4" data-bs-toggle="tab" role="tab" type="button">4</button>
+      </li>
+      <li class="nav-item" id="tablx" role="presentation">
+        <button class="nav-link" data-bs-target="#tabcx" data-bs-toggle="tab" role="tab" type="button">=</button>
+      </li>
     </ul>
-    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
-      <!-- per-player tab to be cloned -->
-      <div class="tabs-panel" id="_player_">
-        <div class="grid-container">
-          <div class="grid-x grid-padding-x">&nbsp;</div>
-          <!-- glory track -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="glory" class="text-right middle">Glory Track</label>
-              <label lang="fr" for="glory" class="text-right middle">Piste de gloire</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="glory" min="0">
-            </div>
-          </div>
-          <!-- number of basic goods -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="basic" class="text-right middle">Number of Basic Goods</label>
-              <label lang="fr" for="basic" class="text-right middle">Nombre de marchandises de base</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="basic" min="0">
-            </div>
-          </div>
-          <!-- number of processed goods -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="processed" class="text-right middle">Number of Processed Goods</label>
-              <label lang="fr" for="processed" class="text-right middle">Nombre de produits transform&eacute;s</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="processed" min="0">
-            </div>
-          </div>
-          <!-- amount of money -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="money" class="text-right middle">Money (&pound;)</label>
-              <label lang="fr" for="money" class="text-right middle">Argent (&pound;)</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="money" min="0">
-            </div>
-          </div>
-          <!-- imported goods -->
-          <div class="small secondary callout text-center">
-            <span lang="en">Imported Goods</span>
-            <span lang="fr">Marchandises import&eacute;es</span>
-            <p>&nbsp;</p>
-            <!-- number of hops -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="hops" class="text-right middle">Number of Hops</label>
-                <label lang="fr" for="hops" class="text-right middle">Nombre de houblon</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="hops" min="0">
-              </div>
-            </div>
-            <!-- number of cotton -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="cotton" class="text-right middle">Number of Cotton</label>
-                <label lang="fr" for="cotton" class="text-right middle">Nombre de coton</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="cotton" min="0">
-              </div>
-            </div>
-            <!-- number of tobacco -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="tobacco" class="text-right middle">Number of Tobacco</label>
-                <label lang="fr" for="tobacco" class="text-right middle">Nombre de tabac</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="tobacco" min="0">
-              </div>
-            </div>
-            <!-- number of sugar cane -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="sugar" class="text-right middle">Number of Sugar Cane</label>
-                <label lang="fr" for="sugar" class="text-right middle">Nombre de canne &agrave; sucre</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="sugar" min="0">
-              </div>
-            </div>
-          </div>
-          <!-- number of export contracts -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="contracts" class="text-right middle">Number of Export Contracts</label>
-              <label lang="fr" for="contracts" class="text-right middle">Nombre de contrats d'exportation</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="contracts" min="0">
-            </div>
-          </div>
-          <!-- number of settlements -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="settlements" class="text-right middle">Number of Settlements (within reach)</label>
-              <label lang="fr" for="settlements" class="text-right middle">Nombre de colonies (&agrave; port&eacute;e)</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="settlements" min="0">
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- tab for the results -->
-      <div class="tabs-panel" id="results">
-        <table>
-          <thead>
-            <tr>
-              <th>
+    <div class="tab-content" id="tab-contents">
+      <div class="tab-pane fade show active" id="tabc1" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname1">
                 <span lang="en">Player</span>
                 <span lang="fr">Joueur</span>
-              </th>
-              <th>
-                <span lang="en">Victory Points</span>
-                <span lang="fr">Points de victoire</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- dynamic -->
-          </tbody>
-        </table>
-        <!-- tie breaker information -->
-        <div id="tie">
-          <p lang="en"><i>Tie breaker</i>:
-            leftover money (included here as decimal part).
-          </p>
-          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
-            argent restant (inclus ici comme partie d&eacute;cimale).
-          </p>
+                &nbsp;1
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score1">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="glory1">
+              <span lang="en">Glory Track</span>
+              <span lang="fr">Piste de gloire</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="101" id="glory1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="basic1">
+              <span lang="en">Number of Basic Goods</span>
+              <span lang="fr">Nombre de marchandises de base</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="102" id="basic1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="processed1">
+              <span lang="en">Number of Processed Goods</span>
+              <span lang="fr">Nombre de produits transformés</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="103" id="processed1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money1">
+              <span lang="en">Money (&pound;)</span>
+              <span lang="fr">Argent (&pound;)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="104" id="money1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <span lang="en">Imported Goods</span>
+                <span lang="fr">Marchandises importées</span>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="hops1">
+                  <span lang="en">Number of Hops</span>
+                  <span lang="fr">Nombre de houblon</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="105" id="hops1" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="cotton1">
+                  <span lang="en">Number of Cotton</span>
+                  <span lang="fr">Nombre de coton</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="106" id="cotton1" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tobacco1">
+                  <span lang="en">Number of Tobacco</span>
+                  <span lang="fr">Nombre de tabac</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="107" id="tobacco1" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="sugar1">
+                  <span lang="en">Number of Sugar Cane</span>
+                  <span lang="fr">Nombre de canne à sucre</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="108" id="sugar1" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="contracts1">
+              <span lang="en">Number of Export Contracts</span>
+              <span lang="fr">Nombre de contrats d'exportation</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="109" id="contracts1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="settlements1">
+              <span lang="en">Number of Settlements (within&nbsp;reach)</span>
+              <span lang="fr">Nombre de colonies (à&nbsp;portée)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="110" id="settlements1" min="0" type="number">
+            </div>
+          </div>
         </div>
-        <!-- imported goods information -->
-        <p>
-          <i>
-            <span lang="en">VPs per imported goods</span>
-            <span lang="fr">PV par marchandise import&eacute;e</span>
-          </i>:
-          <span lang="en">Cotton</span>
-          <span lang="fr">coton</span>
-          = <span id="vp_cotton"></span>,
-          <span lang="en">Tobacco</span>
-          <span lang="fr">tabac</span>
-          = <span id="vp_tobacco"></span>,
-          <span lang="en">Sugar Cane</span>
-          <span lang="fr">canne &agrave; sucre</span>
-          = <span id="vp_sugar"></span>.
-        </p>
-        <!-- date information -->
-        <i><div class="text-center" id="date"></div></i>
+      </div>
+      <div class="tab-pane fade" id="tabc2" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname2">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;2
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score2">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="glory2">
+              <span lang="en">Glory Track</span>
+              <span lang="fr">Piste de gloire</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="201" id="glory2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="basic2">
+              <span lang="en">Number of Basic Goods</span>
+              <span lang="fr">Nombre de marchandises de base</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="202" id="basic2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="processed2">
+              <span lang="en">Number of Processed Goods</span>
+              <span lang="fr">Nombre de produits transformés</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="203" id="processed2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money2">
+              <span lang="en">Money (&pound;)</span>
+              <span lang="fr">Argent (&pound;)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="204" id="money2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <span lang="en">Imported Goods</span>
+                <span lang="fr">Marchandises importées</span>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="hops2">
+                  <span lang="en">Number of Hops</span>
+                  <span lang="fr">Nombre de houblon</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="205" id="hops2" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="cotton2">
+                  <span lang="en">Number of Cotton</span>
+                  <span lang="fr">Nombre de coton</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="206" id="cotton2" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tobacco2">
+                  <span lang="en">Number of Tobacco</span>
+                  <span lang="fr">Nombre de tabac</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="207" id="tobacco2" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="sugar2">
+                  <span lang="en">Number of Sugar Cane</span>
+                  <span lang="fr">Nombre de canne à sucre</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="208" id="sugar2" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="contracts2">
+              <span lang="en">Number of Export Contracts</span>
+              <span lang="fr">Nombre de contrats d'exportation</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="209" id="contracts2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="settlements2">
+              <span lang="en">Number of Settlements (within&nbsp;reach)</span>
+              <span lang="fr">Nombre de colonies (à&nbsp;portée)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="210" id="settlements2" min="0" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc3" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname3">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;3
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score3">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="glory3">
+              <span lang="en">Glory Track</span>
+              <span lang="fr">Piste de gloire</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="301" id="glory3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="basic3">
+              <span lang="en">Number of Basic Goods</span>
+              <span lang="fr">Nombre de marchandises de base</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="302" id="basic3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="processed3">
+              <span lang="en">Number of Processed Goods</span>
+              <span lang="fr">Nombre de produits transformés</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="303" id="processed3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money3">
+              <span lang="en">Money (&pound;)</span>
+              <span lang="fr">Argent (&pound;)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="304" id="money3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <span lang="en">Imported Goods</span>
+                <span lang="fr">Marchandises importées</span>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="hops3">
+                  <span lang="en">Number of Hops</span>
+                  <span lang="fr">Nombre de houblon</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="305" id="hops3" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="cotton3">
+                  <span lang="en">Number of Cotton</span>
+                  <span lang="fr">Nombre de coton</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="306" id="cotton3" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tobacco3">
+                  <span lang="en">Number of Tobacco</span>
+                  <span lang="fr">Nombre de tabac</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="307" id="tobacco3" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="sugar3">
+                  <span lang="en">Number of Sugar Cane</span>
+                  <span lang="fr">Nombre de canne à sucre</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="308" id="sugar3" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="contracts3">
+              <span lang="en">Number of Export Contracts</span>
+              <span lang="fr">Nombre de contrats d'exportation</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="309" id="contracts3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="settlements3">
+              <span lang="en">Number of Settlements (within&nbsp;reach)</span>
+              <span lang="fr">Nombre de colonies (à&nbsp;portée)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="310" id="settlements3" min="0" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc4" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname4">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;4
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score4">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="glory4">
+              <span lang="en">Glory Track</span>
+              <span lang="fr">Piste de gloire</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="401" id="glory4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="basic4">
+              <span lang="en">Number of Basic Goods</span>
+              <span lang="fr">Nombre de marchandises de base</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="402" id="basic4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="processed4">
+              <span lang="en">Number of Processed Goods</span>
+              <span lang="fr">Nombre de produits transformés</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="403" id="processed4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="money4">
+              <span lang="en">Money (&pound;)</span>
+              <span lang="fr">Argent (&pound;)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="404" id="money4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <span lang="en">Imported Goods</span>
+                <span lang="fr">Marchandises importées</span>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="hops4">
+                  <span lang="en">Number of Hops</span>
+                  <span lang="fr">Nombre de houblon</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="405" id="hops4" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="cotton4">
+                  <span lang="en">Number of Cotton</span>
+                  <span lang="fr">Nombre de coton</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="406" id="cotton4" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tobacco4">
+                  <span lang="en">Number of Tobacco</span>
+                  <span lang="fr">Nombre de tabac</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="407" id="tobacco4" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="sugar4">
+                  <span lang="en">Number of Sugar Cane</span>
+                  <span lang="fr">Nombre de canne à sucre</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="408" id="sugar4" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="contracts4">
+              <span lang="en">Number of Export Contracts</span>
+              <span lang="fr">Nombre de contrats d'exportation</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="409" id="contracts4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="settlements4">
+              <span lang="en">Number of Settlements (within&nbsp;reach)</span>
+              <span lang="fr">Nombre de colonies (à&nbsp;portée)</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="410" id="settlements4" min="0" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabcx" role="tabpanel">
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <span lang="en">Player</span>
+                  <span lang="fr">Joueur</span>
+                </th>
+                <th scope="col">
+                  <span lang="en">Victory Points</span>
+                  <span lang="fr">Points de victoire</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="srow1">
+                <td id="sname1">1</td>
+                <td class="score" id="score1">?</td>
+              </tr>
+              <tr id="srow2">
+                <td id="sname2">2</td>
+                <td class="score" id="score2">?</td>
+              </tr>
+              <tr id="srow3">
+                <td id="sname3">3</td>
+                <td class="score" id="score3">?</td>
+              </tr>
+              <tr id="srow4">
+                <td id="sname4">4</td>
+                <td class="score" id="score4">?</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row mt-2" id="tie">
+            <span class="col">
+              <span lang="en">
+                <span class="fst-italic">Tie breaker:</span>
+                <span> leftover money (included here as decimal part).</span>
+              </span>
+              <span lang="fr">
+                <span class="fst-italic">Départage en cas d'égalité :</span>
+                <span> argent restant (inclus ici comme partie décimale).</span>
+              </span>
+            </span>
+          </div>
+          <div class="row mt-2">
+            <div class="col">
+              <span lang="en" class="fst-italic">VPs per imported goods:</span>
+              <span lang="fr" class="fst-italic">PV par marchandise importée :</span>
+              <span lang="en">Cotton</span>
+              <span lang="fr">coton</span>
+              = <span id="cotton0" class="score"></span>,
+              <span lang="en">Tobacco</span>
+              <span lang="fr">tabac</span>
+              = <span id="tobacco0" class="score"></span>,
+              <span lang="en">Sugar Cane</span>
+              <span lang="fr">canne à sucre</span>
+              = <span id="sugar0" class="score"></span>.
+            </div>
+          </div>
+          <div class="row mt-2 text-center">
+            <span class="col fst-italic" id="date">?</span>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/bgss.min.js"></script>
-    <script>
-      $(document).foundation();
-      $(document).ready(bgss.init_game);
-    </script>
   </body>
 </html>

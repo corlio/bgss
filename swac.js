@@ -2,7 +2,7 @@
 // service worker application cache
 //
 
-var CACHE = 'v20210607104637';
+var CACHE = 'v20210826151714';
 
 var AUTO = [
     '00000050.html',
@@ -20,15 +20,24 @@ var AUTO = [
     '00258389.html',
     '00269511.html',
     '00312484.html',
-    'css/bgss.min.css',
-    'css/foundation.min.css',
-    'favicon.ico',
+    'css/bgss.css',
+    'css/bootstrap.css',
+    'img/favicon.ico',
+    'img/house-door.svg',
+    'img/info-square.svg',
     'index.html',
-    'js/bgss.min.js',
-    'js/foundation.min.js',
-    'js/jquery.min.js',
-    'js/what-input.min.js',
+    'js/bgss.js',
+    'js/bootstrap.js',
+    'js/lcng.js',
 ];
+
+// strip query parameters (and fragment)
+function sqp (request) {
+    var url = new URL (request.url);
+    url.search = '';
+    url.fragment = '';
+    return(new Request (url));
+}
 
 // cache preload
 self.addEventListener('install', function (event) {
@@ -62,7 +71,8 @@ self.addEventListener('fetch', function (event) {
         return;
     if (!event.request.url.startsWith(self.location.origin))
         return;
-    event.respondWith(caches.match(event.request).then(function (response) {
+    var cleaned = sqp(event.request);
+    event.respondWith(caches.match(cleaned).then(function (response) {
         if (response !== undefined) {
             return(response);
         } else {
@@ -70,7 +80,7 @@ self.addEventListener('fetch', function (event) {
                 if (response.ok && !response.headers['Cache-Control']) {
                     var cloned = response.clone();
                     caches.open(CACHE).then(function (cache) {
-                        cache.put(event.request, cloned);
+                        cache.put(cleaned, cloned);
                     });
                 }
                 return(response);

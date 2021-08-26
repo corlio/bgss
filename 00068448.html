@@ -1,191 +1,1005 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/foundation.min.css"/>
-    <link rel="stylesheet" href="css/bgss.min.css"/>
     <title>BGSS</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bgss.css"/>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/lcng.js"></script>
+    <script src="js/bgss.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        $.BGSS.game('00068448');
+      });
+    </script>
   </head>
   <body>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><a href=".">&#8962;</a></li>
-          <li class="top-bar-title" id="title"><!-- dynamic --></li>
-        </ul>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <img src="img/house-door.svg" alt="Home" style="width: 1.5em" id="home">
+        <span class="navbar-text ms-auto me-auto">
+          <span lang="en">7 Wonders</span>
+          <span lang="fr">7 Wonders</span>
+        </span>
       </div>
-    </div>
-    <ul class="tabs" data-tabs id="tabs">
-      <!-- dynamic -->
-      <li class="tabs-title"><a href="#results">=</a></li>
+    </nav>
+    <!-- tabs -->
+    <ul class="nav nav-tabs" id="tab-links" role="tablist">
+      <li class="nav-item" id="tabl1" role="presentation">
+        <button class="nav-link active" data-bs-target="#tabc1" data-bs-toggle="tab" role="tab" type="button">1</button>
+      </li>
+      <li class="nav-item" id="tabl2" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc2" data-bs-toggle="tab" role="tab" type="button">2</button>
+      </li>
+      <li class="nav-item" id="tabl3" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc3" data-bs-toggle="tab" role="tab" type="button">3</button>
+      </li>
+      <li class="nav-item" id="tabl4" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc4" data-bs-toggle="tab" role="tab" type="button">4</button>
+      </li>
+      <li class="nav-item" id="tabl5" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc5" data-bs-toggle="tab" role="tab" type="button">5</button>
+      </li>
+      <li class="nav-item" id="tabl6" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc6" data-bs-toggle="tab" role="tab" type="button">6</button>
+      </li>
+      <li class="nav-item" id="tabl7" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc7" data-bs-toggle="tab" role="tab" type="button">7</button>
+      </li>
+      <li class="nav-item" id="tablx" role="presentation">
+        <button class="nav-link" data-bs-target="#tabcx" data-bs-toggle="tab" role="tab" type="button">=</button>
+      </li>
     </ul>
-    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
-      <!-- per-player tab to be cloned -->
-      <div class="tabs-panel" id="_player_">
-        <div class="grid-container">
-          <div class="grid-x grid-padding-x">&nbsp;</div>
-          <!-- number of coins -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="coins" class="text-right middle">Number of Coins</label>
-              <label lang="fr" for="coins" class="text-right middle">Nombre de pi&egrave;ces</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="coins" min="0">
-            </div>
-          </div>
-          <!-- military -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="military" class="text-right middle">Military VPs</label>
-              <label lang="fr" for="military" class="text-right middle">PV militaires</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="military">
-            </div>
-          </div>
-          <!-- wonder -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="wonder" class="text-right middle">Wonder VPs</label>
-              <label lang="fr" for="wonder" class="text-right middle">PV de la merveille</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="wonder" min="0">
-            </div>
-          </div>
-          <!-- civilian -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="civilian" class="text-right middle">Civilian VPs</label>
-              <label lang="fr" for="civilian" class="text-right middle">PV civils</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="civilian" min="0">
-            </div>
-          </div>
-          <!-- commercial -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="commercial" class="text-right middle">Commercial VPs</label>
-              <label lang="fr" for="commercial" class="text-right middle">PV commerciaux</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="commercial" min="0">
-            </div>
-          </div>
-          <!-- guild -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="guild" class="text-right middle">Guild VPs</label>
-              <label lang="fr" for="guild" class="text-right middle">PV des guildes</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="guild" min="0">
-            </div>
-          </div>
-          <!-- scientific -->
-          <div class="small secondary callout text-center">
-            <span lang="en">Scientific VPs</span>
-            <span lang="fr">PV scientifiques</span>
-            &nbsp;=&nbsp;
-            <span id="scientific"></span>
-            <p>&nbsp;</p>
-            <!-- scientific (tablets) -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="tablets" class="text-right middle">Number of Tablets</label>
-                <label lang="fr" for="tablets" class="text-right middle">Nombre de tablettes</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="tablets" min="0">
-              </div>
-            </div>
-            <!-- scientific (compasses) -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="compasses" class="text-right middle">Number of Compasses</label>
-                <label lang="fr" for="compasses" class="text-right middle">Nombre de compas</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="compasses" min="0">
-              </div>
-            </div>
-            <!-- scientific (gears) -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="gears" class="text-right middle">Number of Gears</label>
-                <label lang="fr" for="gears" class="text-right middle">Nombre d'engrenages</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="gears" min="0">
-              </div>
-            </div>
-            <!-- scientific (wild) -->
-            <div class="grid-x grid-padding-x">
-              <div class="small-9 cell">
-                <label lang="en" for="wild" class="text-right middle">Number of Wild</label>
-                <label lang="fr" for="wild" class="text-right middle">Nombre de jokers</label>
-              </div>
-              <div class="small-3 cell">
-                <input type="number" id="wild" min="0" max="3">
-              </div>
-            </div>
-          </div>
-          <!-- extra VPs (extensions) -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="extra" class="text-right middle">Extra VPs</label>
-              <label lang="fr" for="extra" class="text-right middle">PV suppl&eacute;mentaires</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="extra">
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- tab for the results -->
-      <div class="tabs-panel" id="results">
-        <table>
-          <thead>
-            <tr>
-              <th>
+    <div class="tab-content" id="tab-contents">
+      <div class="tab-pane fade show active" id="tabc1" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname1">
                 <span lang="en">Player</span>
                 <span lang="fr">Joueur</span>
-              </th>
-              <th>
-                <span lang="en">Victory Points</span>
-                <span lang="fr">Points de victoire</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- dynamic -->
-          </tbody>
-        </table>
-        <!-- tie breaker information -->
-        <div id="tie">
-          <p lang="en"><i>Tie breaker</i>:
-            number of coins.
-          </p>
-          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
-            nombre de pi&egrave;ces.
-          </p>
+                &nbsp;1
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score1">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="coins1">
+              <span lang="en">Number of Coins</span>
+              <span lang="fr">Nombre de pièces</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="101" id="coins1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="military1">
+              <span lang="en">Military VPs</span>
+              <span lang="fr">PV militaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="102" id="military1" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="wonder1">
+              <span lang="en">Wonder VPs</span>
+              <span lang="fr">PV de la merveille</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="103" id="wonder1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="civilian1">
+              <span lang="en">Civilian VPs</span>
+              <span lang="fr">PV civils</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="104" id="civilian1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="commercial1">
+              <span lang="en">Commercial VPs</span>
+              <span lang="fr">PV commerciaux</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="105" id="commercial1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guild1">
+              <span lang="en">Guild VPs</span>
+              <span lang="fr">PV des guildes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="106" id="guild1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <div class="col">
+                  <span lang="en">Scientific VPs</span>
+                  <span lang="fr">PV scientifiques</span>
+                  &nbsp;=&nbsp;
+                  <span class="score" id="scientific1">?<span>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tablets1">
+                  <span lang="en">Number of Tablets</span>
+                  <span lang="fr">Nombre de tablettes</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="107" id="tablets1" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="compasses1">
+                  <span lang="en">Number of Compasses</span>
+                  <span lang="fr">Nombre de compas</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="108" id="compasses1" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="gears1">
+                  <span lang="en">Number of Gears</span>
+                  <span lang="fr">Nombre d'engrenages</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="109" id="gears1" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="wild1">
+                  <span lang="en">Number of Wild</span>
+                  <span lang="fr">Nombre de jokers</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="110" id="wild1" max="5" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="extra1">
+              <span lang="en">Extra VPs</span>
+              <span lang="fr">PV supplémentaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="111" id="extra1" type="number">
+            </div>
+          </div>
         </div>
-        <!-- date information -->
-        <i><div class="text-center" id="date"></div></i>
+      </div>
+      <div class="tab-pane fade" id="tabc2" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname2">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;2
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score2">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="coins2">
+              <span lang="en">Number of Coins</span>
+              <span lang="fr">Nombre de pièces</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="201" id="coins2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="military2">
+              <span lang="en">Military VPs</span>
+              <span lang="fr">PV militaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="202" id="military2" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="wonder2">
+              <span lang="en">Wonder VPs</span>
+              <span lang="fr">PV de la merveille</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="203" id="wonder2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="civilian2">
+              <span lang="en">Civilian VPs</span>
+              <span lang="fr">PV civils</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="204" id="civilian2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="commercial2">
+              <span lang="en">Commercial VPs</span>
+              <span lang="fr">PV commerciaux</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="205" id="commercial2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guild2">
+              <span lang="en">Guild VPs</span>
+              <span lang="fr">PV des guildes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="206" id="guild2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <div class="col">
+                  <span lang="en">Scientific VPs</span>
+                  <span lang="fr">PV scientifiques</span>
+                  &nbsp;=&nbsp;
+                  <span class="score" id="scientific2">?<span>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tablets2">
+                  <span lang="en">Number of Tablets</span>
+                  <span lang="fr">Nombre de tablettes</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="207" id="tablets2" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="compasses2">
+                  <span lang="en">Number of Compasses</span>
+                  <span lang="fr">Nombre de compas</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="208" id="compasses2" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="gears2">
+                  <span lang="en">Number of Gears</span>
+                  <span lang="fr">Nombre d'engrenages</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="209" id="gears2" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="wild2">
+                  <span lang="en">Number of Wild</span>
+                  <span lang="fr">Nombre de jokers</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="210" id="wild2" max="5" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="extra2">
+              <span lang="en">Extra VPs</span>
+              <span lang="fr">PV supplémentaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="211" id="extra2" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc3" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname3">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;3
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score3">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="coins3">
+              <span lang="en">Number of Coins</span>
+              <span lang="fr">Nombre de pièces</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="301" id="coins3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="military3">
+              <span lang="en">Military VPs</span>
+              <span lang="fr">PV militaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="302" id="military3" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="wonder3">
+              <span lang="en">Wonder VPs</span>
+              <span lang="fr">PV de la merveille</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="303" id="wonder3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="civilian3">
+              <span lang="en">Civilian VPs</span>
+              <span lang="fr">PV civils</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="304" id="civilian3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="commercial3">
+              <span lang="en">Commercial VPs</span>
+              <span lang="fr">PV commerciaux</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="305" id="commercial3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guild3">
+              <span lang="en">Guild VPs</span>
+              <span lang="fr">PV des guildes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="306" id="guild3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <div class="col">
+                  <span lang="en">Scientific VPs</span>
+                  <span lang="fr">PV scientifiques</span>
+                  &nbsp;=&nbsp;
+                  <span class="score" id="scientific3">?<span>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tablets3">
+                  <span lang="en">Number of Tablets</span>
+                  <span lang="fr">Nombre de tablettes</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="307" id="tablets3" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="compasses3">
+                  <span lang="en">Number of Compasses</span>
+                  <span lang="fr">Nombre de compas</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="308" id="compasses3" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="gears3">
+                  <span lang="en">Number of Gears</span>
+                  <span lang="fr">Nombre d'engrenages</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="309" id="gears3" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="wild3">
+                  <span lang="en">Number of Wild</span>
+                  <span lang="fr">Nombre de jokers</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="310" id="wild3" max="5" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="extra3">
+              <span lang="en">Extra VPs</span>
+              <span lang="fr">PV supplémentaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="311" id="extra3" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc4" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname4">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;4
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score4">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="coins4">
+              <span lang="en">Number of Coins</span>
+              <span lang="fr">Nombre de pièces</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="401" id="coins4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="military4">
+              <span lang="en">Military VPs</span>
+              <span lang="fr">PV militaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="402" id="military4" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="wonder4">
+              <span lang="en">Wonder VPs</span>
+              <span lang="fr">PV de la merveille</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="403" id="wonder4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="civilian4">
+              <span lang="en">Civilian VPs</span>
+              <span lang="fr">PV civils</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="404" id="civilian4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="commercial4">
+              <span lang="en">Commercial VPs</span>
+              <span lang="fr">PV commerciaux</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="405" id="commercial4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guild4">
+              <span lang="en">Guild VPs</span>
+              <span lang="fr">PV des guildes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="406" id="guild4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <div class="col">
+                  <span lang="en">Scientific VPs</span>
+                  <span lang="fr">PV scientifiques</span>
+                  &nbsp;=&nbsp;
+                  <span class="score" id="scientific4">?<span>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tablets4">
+                  <span lang="en">Number of Tablets</span>
+                  <span lang="fr">Nombre de tablettes</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="407" id="tablets4" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="compasses4">
+                  <span lang="en">Number of Compasses</span>
+                  <span lang="fr">Nombre de compas</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="408" id="compasses4" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="gears4">
+                  <span lang="en">Number of Gears</span>
+                  <span lang="fr">Nombre d'engrenages</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="409" id="gears4" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="wild4">
+                  <span lang="en">Number of Wild</span>
+                  <span lang="fr">Nombre de jokers</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="410" id="wild4" max="5" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="extra4">
+              <span lang="en">Extra VPs</span>
+              <span lang="fr">PV supplémentaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="411" id="extra4" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc5" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname5">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;5
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score5">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="coins5">
+              <span lang="en">Number of Coins</span>
+              <span lang="fr">Nombre de pièces</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="501" id="coins5" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="military5">
+              <span lang="en">Military VPs</span>
+              <span lang="fr">PV militaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="502" id="military5" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="wonder5">
+              <span lang="en">Wonder VPs</span>
+              <span lang="fr">PV de la merveille</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="503" id="wonder5" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="civilian5">
+              <span lang="en">Civilian VPs</span>
+              <span lang="fr">PV civils</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="504" id="civilian5" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="commercial5">
+              <span lang="en">Commercial VPs</span>
+              <span lang="fr">PV commerciaux</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="505" id="commercial5" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guild5">
+              <span lang="en">Guild VPs</span>
+              <span lang="fr">PV des guildes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="506" id="guild5" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <div class="col">
+                  <span lang="en">Scientific VPs</span>
+                  <span lang="fr">PV scientifiques</span>
+                  &nbsp;=&nbsp;
+                  <span class="score" id="scientific5">?<span>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tablets5">
+                  <span lang="en">Number of Tablets</span>
+                  <span lang="fr">Nombre de tablettes</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="507" id="tablets5" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="compasses5">
+                  <span lang="en">Number of Compasses</span>
+                  <span lang="fr">Nombre de compas</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="508" id="compasses5" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="gears5">
+                  <span lang="en">Number of Gears</span>
+                  <span lang="fr">Nombre d'engrenages</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="509" id="gears5" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="wild5">
+                  <span lang="en">Number of Wild</span>
+                  <span lang="fr">Nombre de jokers</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="510" id="wild5" max="5" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="extra5">
+              <span lang="en">Extra VPs</span>
+              <span lang="fr">PV supplémentaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="511" id="extra5" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc6" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname6">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;6
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score6">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="coins6">
+              <span lang="en">Number of Coins</span>
+              <span lang="fr">Nombre de pièces</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="601" id="coins6" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="military6">
+              <span lang="en">Military VPs</span>
+              <span lang="fr">PV militaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="602" id="military6" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="wonder6">
+              <span lang="en">Wonder VPs</span>
+              <span lang="fr">PV de la merveille</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="603" id="wonder6" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="civilian6">
+              <span lang="en">Civilian VPs</span>
+              <span lang="fr">PV civils</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="604" id="civilian6" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="commercial6">
+              <span lang="en">Commercial VPs</span>
+              <span lang="fr">PV commerciaux</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="605" id="commercial6" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guild6">
+              <span lang="en">Guild VPs</span>
+              <span lang="fr">PV des guildes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="606" id="guild6" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <div class="col">
+                  <span lang="en">Scientific VPs</span>
+                  <span lang="fr">PV scientifiques</span>
+                  &nbsp;=&nbsp;
+                  <span class="score" id="scientific6">?<span>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tablets6">
+                  <span lang="en">Number of Tablets</span>
+                  <span lang="fr">Nombre de tablettes</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="607" id="tablets6" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="compasses6">
+                  <span lang="en">Number of Compasses</span>
+                  <span lang="fr">Nombre de compas</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="608" id="compasses6" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="gears6">
+                  <span lang="en">Number of Gears</span>
+                  <span lang="fr">Nombre d'engrenages</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="609" id="gears6" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="wild6">
+                  <span lang="en">Number of Wild</span>
+                  <span lang="fr">Nombre de jokers</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="610" id="wild6" max="5" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="extra6">
+              <span lang="en">Extra VPs</span>
+              <span lang="fr">PV supplémentaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="611" id="extra6" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc7" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname7">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;7
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score7">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="coins7">
+              <span lang="en">Number of Coins</span>
+              <span lang="fr">Nombre de pièces</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="701" id="coins7" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="military7">
+              <span lang="en">Military VPs</span>
+              <span lang="fr">PV militaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="702" id="military7" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="wonder7">
+              <span lang="en">Wonder VPs</span>
+              <span lang="fr">PV de la merveille</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="703" id="wonder7" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="civilian7">
+              <span lang="en">Civilian VPs</span>
+              <span lang="fr">PV civils</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="704" id="civilian7" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="commercial7">
+              <span lang="en">Commercial VPs</span>
+              <span lang="fr">PV commerciaux</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="705" id="commercial7" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="guild7">
+              <span lang="en">Guild VPs</span>
+              <span lang="fr">PV des guildes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="706" id="guild7" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2 py-2 bg-light">
+            <div clas="col">
+              <div class="row my-0 text-center">
+                <div class="col">
+                  <span lang="en">Scientific VPs</span>
+                  <span lang="fr">PV scientifiques</span>
+                  &nbsp;=&nbsp;
+                  <span class="score" id="scientific7">?<span>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="tablets7">
+                  <span lang="en">Number of Tablets</span>
+                  <span lang="fr">Nombre de tablettes</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="707" id="tablets7" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="compasses7">
+                  <span lang="en">Number of Compasses</span>
+                  <span lang="fr">Nombre de compas</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="708" id="compasses7" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="gears7">
+                  <span lang="en">Number of Gears</span>
+                  <span lang="fr">Nombre d'engrenages</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="709" id="gears7" min="0" type="number">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <label class="col-9 col-form-label" for="wild7">
+                  <span lang="en">Number of Wild</span>
+                  <span lang="fr">Nombre de jokers</span>
+                </label>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                  <input class="form-control" data-index="710" id="wild7" max="5" min="0" type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="extra7">
+              <span lang="en">Extra VPs</span>
+              <span lang="fr">PV supplémentaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="711" id="extra7" type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabcx" role="tabpanel">
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <span lang="en">Player</span>
+                  <span lang="fr">Joueur</span>
+                </th>
+                <th scope="col">
+                  <span lang="en">Victory Points</span>
+                  <span lang="fr">Points de victoire</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="srow1">
+                <td id="sname1">1</td>
+                <td class="score" id="score1">?</td>
+              </tr>
+              <tr id="srow2">
+                <td id="sname2">2</td>
+                <td class="score" id="score2">?</td>
+              </tr>
+              <tr id="srow3">
+                <td id="sname3">3</td>
+                <td class="score" id="score3">?</td>
+              </tr>
+              <tr id="srow4">
+                <td id="sname4">4</td>
+                <td class="score" id="score4">?</td>
+              </tr>
+              <tr id="srow5">
+                <td id="sname5">5</td>
+                <td class="score" id="score5">?</td>
+              </tr>
+              <tr id="srow6">
+                <td id="sname6">6</td>
+                <td class="score" id="score6">?</td>
+              </tr>
+              <tr id="srow7">
+                <td id="sname7">7</td>
+                <td class="score" id="score7">?</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row mt-2" id="tie">
+            <span class="col">
+              <span lang="en">
+                <span class="fst-italic">Tie breaker:</span>
+                <span> number of coins.</span>
+              </span>
+              <span lang="fr">
+                <span class="fst-italic">Départage en cas d'égalité :</span>
+                <span> nombre de pièces.</span>
+              </span>
+            </span>
+          </div>
+          <div class="row mt-2 text-center">
+            <span class="col fst-italic" id="date">?</span>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/bgss.min.js"></script>
-    <script>
-      $(document).foundation();
-      $(document).ready(bgss.init_game);
-    </script>
   </body>
 </html>

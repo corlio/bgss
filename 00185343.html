@@ -1,228 +1,702 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/foundation.min.css"/>
-    <link rel="stylesheet" href="css/bgss.min.css"/>
     <title>BGSS</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bgss.css"/>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/lcng.js"></script>
+    <script src="js/bgss.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        $.BGSS.game('00185343');
+      });
+    </script>
   </head>
   <body>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><a href=".">&#8962;</a></li>
-          <li class="top-bar-title" id="title"><!-- dynamic --></li>
-        </ul>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <img src="img/house-door.svg" alt="Home" style="width: 1.5em" id="home">
+        <span class="navbar-text ms-auto me-auto">
+          <span lang="en">Anachrony</span>
+          <span lang="fr">Anachrony</span>
+        </span>
       </div>
-    </div>
-    <ul class="tabs" data-tabs id="tabs">
-      <!-- dynamic -->
-      <li class="tabs-title"><a href="#results">=</a></li>
+    </nav>
+    <!-- tabs -->
+    <ul class="nav nav-tabs" id="tab-links" role="tablist">
+      <li class="nav-item" id="tabl1" role="presentation">
+        <button class="nav-link active" data-bs-target="#tabc1" data-bs-toggle="tab" role="tab" type="button">1</button>
+      </li>
+      <li class="nav-item" id="tabl2" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc2" data-bs-toggle="tab" role="tab" type="button">2</button>
+      </li>
+      <li class="nav-item" id="tabl3" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc3" data-bs-toggle="tab" role="tab" type="button">3</button>
+      </li>
+      <li class="nav-item" id="tabl4" role="presentation">
+        <button class="nav-link" data-bs-target="#tabc4" data-bs-toggle="tab" role="tab" type="button">4</button>
+      </li>
+      <li class="nav-item" id="tablx" role="presentation">
+        <button class="nav-link" data-bs-target="#tabcx" data-bs-toggle="tab" role="tab" type="button">=</button>
+      </li>
     </ul>
-    <div class="tabs-content" data-tabs-content="tabs" id="tabs-content">
-      <!-- per-player tab to be cloned -->
-      <div class="tabs-panel" id="_player_">
-        <div class="grid-container">
-          <div class="grid-x grid-padding-x">&nbsp;</div>
-          <!-- VPs from buildings -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="buildings" class="text-right middle">Buildings VPs</label>
-              <label lang="fr" for="buildings" class="text-right middle">PV des b&acirc;timents</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="buildings" min="0">
-            </div>
-          </div>
-          <!-- VPs from superprojects -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="projects" class="text-right middle">Superprojects VPs</label>
-              <label lang="fr" for="projects" class="text-right middle">PV des superprojets</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="projects" min="0">
-            </div>
-          </div>
-          <!-- number of anomalies -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="anomalies" class="text-right middle">Number of Anomalies</label>
-              <label lang="fr" for="anomalies" class="text-right middle">Nombre d'anomalies</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="anomalies" min="0">
-            </div>
-          </div>
-          <!-- VPs from time travel track -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="travel" class="text-right middle">Time Travel Track VPs</label>
-              <label lang="fr" for="travel" class="text-right middle">PV de la piste de voyage temporel</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="travel">
-            </div>
-          </div>
-          <!-- VPs from morale track -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="morale" class="text-right middle">Morale Track VPs</label>
-              <label lang="fr" for="morale" class="text-right middle">PV de la piste de moral</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="morale">
-            </div>
-          </div>
-          <!-- number of round breakthroughs -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="breakthroughs1" class="text-right middle">Number of Round Breakthroughs</label>
-              <label lang="fr" for="breakthroughs1" class="text-right middle">Nombre de d&eacute;couvertes rondes</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="breakthroughs1" min="0">
-            </div>
-          </div>
-          <!-- number of triangle breakthroughs -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="breakthroughs2" class="text-right middle">Number of Triangle Breakthroughs</label>
-              <label lang="fr" for="breakthroughs2" class="text-right middle">Nombre de d&eacute;couvertes triangulaires</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="breakthroughs2" min="0">
-            </div>
-          </div>
-          <!-- number of square breakthroughs -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="breakthroughs3" class="text-right middle">Number of Square Breakthroughs</label>
-              <label lang="fr" for="breakthroughs3" class="text-right middle">Nombre de d&eacute;couvertes carr&eacute;es</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="breakthroughs3" min="0">
-            </div>
-          </div>
-          <!-- VPs tokens -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="tokens" class="text-right middle">Token VPs</label>
-              <label lang="fr" for="tokens" class="text-right middle">PV des jetons</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="tokens" min="-3">
-            </div>
-          </div>
-          <!-- number of unfulfilled warp tiles -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="warps" class="text-right middle">Number of Warp Tiles</label>
-              <label lang="fr" for="warps" class="text-right middle">Nombre de tuiles vortex</label>
-            </div>
-            <div class="small-3 cell">
-              <input type="number" id="warps" min="0" max="9">
-            </div>
-          </div>
-          <!-- endgame condition 1 -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="endgame1" class="text-right middle">Endgame Condition 1</label>
-              <label lang="fr" for="endgame1" class="text-right middle">Condition de fin de partie 1</label>
-            </div>
-            <div class="small-3 cell switch">
-              <input type="checkbox" id="endgame1" class="switch-input">
-              <label class="switch-paddle" for="endgame1"></label>
-            </div>
-          </div>
-          <!-- endgame condition 2 -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="endgame2" class="text-right middle">Endgame Condition 2</label>
-              <label lang="fr" for="endgame2" class="text-right middle">Condition de fin de partie 2</label>
-            </div>
-            <div class="small-3 cell switch">
-              <input type="checkbox" id="endgame2" class="switch-input">
-              <label class="switch-paddle" for="endgame2"></label>
-            </div>
-          </div>
-          <!-- endgame condition 3 -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="endgame3" class="text-right middle">Endgame Condition 3</label>
-              <label lang="fr" for="endgame3" class="text-right middle">Condition de fin de partie 3</label>
-            </div>
-            <div class="small-3 cell switch">
-              <input type="checkbox" id="endgame3" class="switch-input">
-              <label class="switch-paddle" for="endgame3"></label>
-            </div>
-          </div>
-          <!-- endgame condition 4 -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="endgame4" class="text-right middle">Endgame Condition 4</label>
-              <label lang="fr" for="endgame4" class="text-right middle">Condition de fin de partie 4</label>
-            </div>
-            <div class="small-3 cell switch">
-              <input type="checkbox" id="endgame4" class="switch-input">
-              <label class="switch-paddle" for="endgame4"></label>
-            </div>
-          </div>
-          <!-- endgame condition 5 -->
-          <div class="grid-x grid-padding-x">
-            <div class="small-9 cell">
-              <label lang="en" for="endgame5" class="text-right middle">Endgame Condition 5</label>
-              <label lang="fr" for="endgame5" class="text-right middle">Condition de fin de partie 5</label>
-            </div>
-            <div class="small-3 cell switch">
-              <input type="checkbox" id="endgame5" class="switch-input">
-              <label class="switch-paddle" for="endgame5"></label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- tab for the results -->
-      <div class="tabs-panel" id="results">
-        <table>
-          <thead>
-            <tr>
-              <th>
+    <div class="tab-content" id="tab-contents">
+      <div class="tab-pane fade show active" id="tabc1" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname1">
                 <span lang="en">Player</span>
                 <span lang="fr">Joueur</span>
-              </th>
-              <th>
-                <span lang="en">Victory Points</span>
-                <span lang="fr">Points de victoire</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- dynamic -->
-          </tbody>
-        </table>
-        <!-- tie breaker information -->
-        <div id="tie">
-          <p lang="en"><i>Tie breaker</i>:
-            water then resources.
-          </p>
-          <p lang="fr"><i>D&eacute;partage en cas d'&eacute;galit&eacute;</i>:
-            eau puis ressources.
-          </p>
+                &nbsp;1
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score1">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="buildings1">
+              <span lang="en">Buildings VPs</span>
+              <span lang="fr">PV des bâtiments</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="101" id="buildings1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="projects1">
+              <span lang="en">Superprojects VPs</span>
+              <span lang="fr">PV des superprojets</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="102" id="projects1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="anomalies1">
+              <span lang="en">Number of Anomalies</span>
+              <span lang="fr">Nombre d'anomalies</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="103" id="anomalies1" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="travel1">
+              <span lang="en">Time Travel Track VPs</span>
+              <span lang="fr">PV de la piste de voyage temporel</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="104" id="travel1" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="morale1">
+              <span lang="en">Morale Track VPs</span>
+              <span lang="fr">PV de la piste de moral</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="105" id="morale1" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs11">
+              <span lang="en">Number of Round Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes rondes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="106" id="breakthroughs11" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs21">
+              <span lang="en">Number of Triangle Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes triangulaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="107" id="breakthroughs21" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs31">
+              <span lang="en">Number of Square Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes carrées</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="108" id="breakthroughs31" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="tokens1">
+              <span lang="en">Token VPs</span>
+              <span lang="fr">PV des jetons</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="109" id="tokens1" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="warps1">
+              <span lang="en">Number of Warp Tiles</span>
+              <span lang="fr">Nombre de tuiles vortex</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="110" id="warps1" max="9" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame11">
+              <span lang="en">Endgame Condition 1</span>
+              <span lang="fr">Condition de fin de partie 1</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="111" id="endgame11" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame21">
+              <span lang="en">Endgame Condition 2</span>
+              <span lang="fr">Condition de fin de partie 2</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="112" id="endgame21" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame31">
+              <span lang="en">Endgame Condition 3</span>
+              <span lang="fr">Condition de fin de partie 3</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="113" id="endgame31" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame41">
+              <span lang="en">Endgame Condition 4</span>
+              <span lang="fr">Condition de fin de partie 4</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="114" id="endgame41" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame51">
+              <span lang="en">Endgame Condition 5</span>
+              <span lang="fr">Condition de fin de partie 5</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="115" id="endgame51" type="checkbox">
+            </div>
+          </div>
         </div>
-        <!-- date information -->
-        <i><div class="text-center" id="date"></div></i>
+      </div>
+      <div class="tab-pane fade" id="tabc2" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname2">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;2
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score2">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="buildings2">
+              <span lang="en">Buildings VPs</span>
+              <span lang="fr">PV des bâtiments</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="201" id="buildings2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="projects2">
+              <span lang="en">Superprojects VPs</span>
+              <span lang="fr">PV des superprojets</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="202" id="projects2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="anomalies2">
+              <span lang="en">Number of Anomalies</span>
+              <span lang="fr">Nombre d'anomalies</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="203" id="anomalies2" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="travel2">
+              <span lang="en">Time Travel Track VPs</span>
+              <span lang="fr">PV de la piste de voyage temporel</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="204" id="travel2" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="morale2">
+              <span lang="en">Morale Track VPs</span>
+              <span lang="fr">PV de la piste de moral</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="205" id="morale2" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs12">
+              <span lang="en">Number of Round Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes rondes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="206" id="breakthroughs12" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs22">
+              <span lang="en">Number of Triangle Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes triangulaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="207" id="breakthroughs22" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs32">
+              <span lang="en">Number of Square Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes carrées</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="208" id="breakthroughs32" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="tokens2">
+              <span lang="en">Token VPs</span>
+              <span lang="fr">PV des jetons</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="209" id="tokens2" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="warps2">
+              <span lang="en">Number of Warp Tiles</span>
+              <span lang="fr">Nombre de tuiles vortex</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="210" id="warps2" max="9" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame12">
+              <span lang="en">Endgame Condition 1</span>
+              <span lang="fr">Condition de fin de partie 1</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="211" id="endgame12" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame22">
+              <span lang="en">Endgame Condition 2</span>
+              <span lang="fr">Condition de fin de partie 2</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="212" id="endgame22" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame32">
+              <span lang="en">Endgame Condition 3</span>
+              <span lang="fr">Condition de fin de partie 3</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="213" id="endgame32" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame42">
+              <span lang="en">Endgame Condition 4</span>
+              <span lang="fr">Condition de fin de partie 4</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="214" id="endgame42" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame52">
+              <span lang="en">Endgame Condition 5</span>
+              <span lang="fr">Condition de fin de partie 5</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="215" id="endgame52" type="checkbox">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc3" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname3">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;3
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score3">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="buildings3">
+              <span lang="en">Buildings VPs</span>
+              <span lang="fr">PV des bâtiments</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="301" id="buildings3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="projects3">
+              <span lang="en">Superprojects VPs</span>
+              <span lang="fr">PV des superprojets</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="302" id="projects3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="anomalies3">
+              <span lang="en">Number of Anomalies</span>
+              <span lang="fr">Nombre d'anomalies</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="303" id="anomalies3" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="travel3">
+              <span lang="en">Time Travel Track VPs</span>
+              <span lang="fr">PV de la piste de voyage temporel</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="304" id="travel3" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="morale3">
+              <span lang="en">Morale Track VPs</span>
+              <span lang="fr">PV de la piste de moral</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="305" id="morale3" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs13">
+              <span lang="en">Number of Round Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes rondes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="306" id="breakthroughs13" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs23">
+              <span lang="en">Number of Triangle Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes triangulaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="307" id="breakthroughs23" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs33">
+              <span lang="en">Number of Square Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes carrées</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="308" id="breakthroughs33" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="tokens3">
+              <span lang="en">Token VPs</span>
+              <span lang="fr">PV des jetons</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="309" id="tokens3" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="warps3">
+              <span lang="en">Number of Warp Tiles</span>
+              <span lang="fr">Nombre de tuiles vortex</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="310" id="warps3" max="9" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame13">
+              <span lang="en">Endgame Condition 1</span>
+              <span lang="fr">Condition de fin de partie 1</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="311" id="endgame13" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame23">
+              <span lang="en">Endgame Condition 2</span>
+              <span lang="fr">Condition de fin de partie 2</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="312" id="endgame23" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame33">
+              <span lang="en">Endgame Condition 3</span>
+              <span lang="fr">Condition de fin de partie 3</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="313" id="endgame33" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame43">
+              <span lang="en">Endgame Condition 4</span>
+              <span lang="fr">Condition de fin de partie 4</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="314" id="endgame43" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame53">
+              <span lang="en">Endgame Condition 5</span>
+              <span lang="fr">Condition de fin de partie 5</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="315" id="endgame53" type="checkbox">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabc4" role="tabpanel">
+        <div class="container pb-2">
+          <div class="row mt-2 text-center fst-italic">
+            <div class="col">
+              <span id="iname4">
+                <span lang="en">Player</span>
+                <span lang="fr">Joueur</span>
+                &nbsp;4
+              </span>
+              <span>&nbsp;=&nbsp;</span>
+              <span class="score" id="score4">?</span>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="buildings4">
+              <span lang="en">Buildings VPs</span>
+              <span lang="fr">PV des bâtiments</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="401" id="buildings4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="projects4">
+              <span lang="en">Superprojects VPs</span>
+              <span lang="fr">PV des superprojets</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="402" id="projects4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="anomalies4">
+              <span lang="en">Number of Anomalies</span>
+              <span lang="fr">Nombre d'anomalies</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="403" id="anomalies4" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="travel4">
+              <span lang="en">Time Travel Track VPs</span>
+              <span lang="fr">PV de la piste de voyage temporel</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="404" id="travel4" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="morale4">
+              <span lang="en">Morale Track VPs</span>
+              <span lang="fr">PV de la piste de moral</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="405" id="morale4" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs14">
+              <span lang="en">Number of Round Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes rondes</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="406" id="breakthroughs14" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs24">
+              <span lang="en">Number of Triangle Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes triangulaires</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="407" id="breakthroughs24" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="breakthroughs34">
+              <span lang="en">Number of Square Breakthroughs</span>
+              <span lang="fr">Nombre de découvertes carrées</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="408" id="breakthroughs34" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="tokens4">
+              <span lang="en">Token VPs</span>
+              <span lang="fr">PV des jetons</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="409" id="tokens4" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="warps4">
+              <span lang="en">Number of Warp Tiles</span>
+              <span lang="fr">Nombre de tuiles vortex</span>
+            </label>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+              <input class="form-control" data-index="410" id="warps4" max="9" min="0" type="number">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame14">
+              <span lang="en">Endgame Condition 1</span>
+              <span lang="fr">Condition de fin de partie 1</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="411" id="endgame14" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame24">
+              <span lang="en">Endgame Condition 2</span>
+              <span lang="fr">Condition de fin de partie 2</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="412" id="endgame24" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame34">
+              <span lang="en">Endgame Condition 3</span>
+              <span lang="fr">Condition de fin de partie 3</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="413" id="endgame34" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame44">
+              <span lang="en">Endgame Condition 4</span>
+              <span lang="fr">Condition de fin de partie 4</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="414" id="endgame44" type="checkbox">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="col-9 col-form-label" for="endgame54">
+              <span lang="en">Endgame Condition 5</span>
+              <span lang="fr">Condition de fin de partie 5</span>
+            </label>
+            <div class="col-3 form-switch d-flex align-items-center justify-content-center">
+              <input class="form-check-input" data-index="415" id="endgame54" type="checkbox">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabcx" role="tabpanel">
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <span lang="en">Player</span>
+                  <span lang="fr">Joueur</span>
+                </th>
+                <th scope="col">
+                  <span lang="en">Victory Points</span>
+                  <span lang="fr">Points de victoire</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="srow1">
+                <td id="sname1">1</td>
+                <td class="score" id="score1">?</td>
+              </tr>
+              <tr id="srow2">
+                <td id="sname2">2</td>
+                <td class="score" id="score2">?</td>
+              </tr>
+              <tr id="srow3">
+                <td id="sname3">3</td>
+                <td class="score" id="score3">?</td>
+              </tr>
+              <tr id="srow4">
+                <td id="sname4">4</td>
+                <td class="score" id="score4">?</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row mt-2" id="tie">
+            <span class="col">
+              <span lang="en">
+                <span class="fst-italic">Tie breaker:</span>
+                <span> water then resources.</span>
+              </span>
+              <span lang="fr">
+                <span class="fst-italic">Départage en cas d'égalité :</span>
+                <span> eau puis ressources.</span>
+              </span>
+            </span>
+          </div>
+          <div class="row mt-2 text-center">
+            <span class="col fst-italic" id="date">?</span>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/bgss.min.js"></script>
-    <script>
-      $(document).foundation();
-      $(document).ready(bgss.init_game);
-    </script>
   </body>
 </html>
