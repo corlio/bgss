@@ -1,4 +1,4 @@
-# BGSS (BoardGame Score Sheet)
+# BGSS (Board Game Score Sheet)
 
 URL: https://corlio.github.io/bgss/
 
