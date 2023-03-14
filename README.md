@@ -1,5 +1,3 @@
 # BGSS (Board Game Score Sheet)
 
-URL: https://corlio.github.io/bgss/
-
-Source: https://github.com/corlio/bgss/
+URL: https://corlio.gitlab.io/bgss/
